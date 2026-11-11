@@ -61,3 +61,30 @@ pizarra con tiza, boceto con brillo neón, vector plano, línea minimalista.
 - `tiktokData`: `{"title": "<igual>", "privacyOption": "PUBLIC_TO_EVERYONE", "isAigc": true}`
 - **`autoPublish: false`** → Daniel recibe la notificación en la app de Metricool y publica con un toque.
   No cambiar a publicación automática sin que Daniel lo pida expresamente.
+
+## Estudio diario (antes de elegir el tema)
+1. **Mis resultados:** con Metricool (getAnalyticsDataByMetrics / getScheduledPosts) revisa vistas, likes,
+   comentarios y retención de los últimos videos en TikTok y YouTube. Qué tema/formato/estilo rindió más.
+2. **Tendencias:** busca en YouTube Shorts y TikTok (WebSearch y, si hay, el navegador en la nube) qué
+   "¿Qué pasaría si…?", historias animadas y series con personaje están explotando esta semana
+   (vistas altas en canales pequeños = señal fuerte). TikTok suele pedir login; si no carga, usa YouTube y la web.
+3. **Comentarios:** lee los comentarios de los últimos videos; las ideas de la gente son temas prioritarios
+   (y para la Ruleta de Nico).
+4. Anota en `estudio.md` (fecha, 3–5 hallazgos, decisión del día). Repite lo que funciona, corta lo que no.
+
+## Referencias que pasó Daniel (Instagram) — tenerlas en cuenta siempre
+- @martivegara.yt (DfVFhIAvRiZ): animación pixel art tipo videojuego con diálogos de texto, "Día 001…365",
+  inventario de 4 pasos arriba. Idea: formato de serie con progreso visible.
+- @morrow.studio3d (DfDF_diPhmi): shorts 3D "What if…" hechos 100% con Claude Code; 56 videos ≈ 35 M vistas.
+  Gancho fuerte, cada dato con fuente, render local. Cada video escena nueva.
+- @liaodaoaii (DfbyRlwhfdv): 6 estilos: explicador caricatura 3D, monigotes, comparaciones visuales
+  ("13 cubos de azúcar"), mapas de ruta 3D, motion graphics minimalistas, gráficas animadas.
+- @sabodominik_ (DfieBOukW4i): MISMA escena ("¿qué pasaría si pudieras detener el tiempo?") en 7 estilos:
+  PS1, Lego, caricatura 2D, terror liminal, Roblox, pixel art 3D, low-poly. Mantener historia, rotar estilo.
+- @tonistelk (DfenRsSIOqZ): 10 estilos virales: pixel art, pizarra con tiza, boceto con brillo, PS2, cómic,
+  vector plano, línea minimalista, CGI, Lego (+1). 
+- Nuevas referencias que mande Daniel: añadirlas aquí con su lección.
+
+## Redes
+- Activas: TikTok + YouTube (Shorts). Instagram (Reels) se sumará cuando Daniel cree la cuenta y la
+  conecte en Metricool: entonces agregar `{"network":"instagram"}` con `instagramData: {"type":"REEL", "isAiGenerated": true}`.
