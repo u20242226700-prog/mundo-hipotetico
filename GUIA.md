@@ -6,8 +6,9 @@ subtítulos, música y efectos. Esta guía es lo que sigue la tarea programada c
 
 ## Cuentas y herramientas
 - **Metricool** (conector): marca `blogId = 8043911`, zona horaria `America/Bogota`, redes: TikTok + YouTube.
-- **Speko** (conector): voz. Voz fija del canal: **Johan – Colombiano**, ElevenLabs,
-  `voice = "4uvQjLPvqApx1dVzpNfM"`, `constraints.allowedProviders.tts = ["elevenlabs"]`, `intent.language = "es"`.
+- **Speko** (conector): voz. Voz fija del canal (elegida por Daniel el 2026-11-11): **Adrián** — grave,
+  profunda, tono documental. `voice = "Adrian"`, `constraints.allowedProviders.tts = ["soniox"]`, `intent.language = "es"`.
+  (Antes: Johan – Colombiano de ElevenLabs; ya no se usa.)
   El audio llega como archivo .wav en el resultado de la herramienta; se copia a la carpeta del episodio.
 - **Este repo** (público): guarda episodios y sirve el video por link público para Metricool:
   `https://raw.githubusercontent.com/u20242226700-prog/mundo-hipotetico/main/<ruta>/video.mp4`
