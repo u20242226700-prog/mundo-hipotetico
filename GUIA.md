@@ -25,17 +25,30 @@ subtítulos, música y efectos. Esta guía es lo que sigue la tarea programada c
 - Fuentes de datos van en la descripción, nunca en pantalla.
 - Voz acelerada ×1.12 (ffmpeg `atempo=1.12` + `silenceremove` al inicio y final).
 
-## Rotación de contenido (elegir el tema del día)
-Revisar `historial.md` para no repetir. Alternar:
-1. **"¿Qué pasaría si…?" de época**: Nico lleva algo moderno a otra época (Egipto, Roma, Vikingos,
-   Viejo Oeste, Edad Media, Japón feudal, Aztecas, Edad de Piedra…).
-2. **La Ruleta de Nico** (serie de 3 días): día 1 gira 3–4 ruletas (entorno: apocalipsis zombie,
-   isla desierta, Marte, Titanic…; villano: zombies, dinosaurio, piratas, IA malvada…; objeto: chancla,
-   celular al 1 %, cuchara…; estilo visual). Días 2 y 3: Nico resuelve; el 2 termina en suspenso,
-   el 3 pide ideas para la próxima ruleta.
-3. **Escenarios absurdos**: "¿Qué pasaría si fueras el único humano en la Tierra?", "si los perros hablaran"…
-Estilos visuales para rotar (2D posibles aquí): caricatura (actual), cómic con viñetas, pixel art,
-pizarra con tiza, boceto con brillo neón, vector plano, línea minimalista.
+## Qué va en cada horario (decidido por Daniel el 2026-11-11)
+### 08:00 — video suelto "¿Qué pasaría si…?"
+Una historia completa en un solo video, como la de Egipto. Dos familias, alternando:
+- **De época:** Nico lleva algo moderno a otra época (Antigua Roma, Vikingos, Viejo Oeste, Edad Media,
+  Japón feudal, Aztecas, Edad de Piedra, Grecia, Piratas…).
+- **"¿Y si no existiera…?":** el mundo sin algo cotidiano (la goma/el caucho, el plástico, la electricidad,
+  internet, los relojes, el papel, el azúcar…) o con una regla cambiada (si los perros hablaran, si
+  durmiéramos 1 hora, si la gravedad fuera la mitad…). Mezclar humor con 2–3 datos reales verificados.
+
+### 18:00 — series de 3 capítulos
+Tú eliges la idea y haces todo. Cada serie = 3 videos seguidos de las 6 p. m. (días consecutivos).
+- Capítulo 1: presenta el problema y engancha ("Parte 1/3" visible al inicio). Termina en suspenso.
+- Capítulo 2: complica la situación. Termina en suspenso ("¿Cómo sale de esta? Parte 3 mañana").
+- Capítulo 3: resolución + pregunta para la próxima serie ("¿Qué le ponemos en la próxima?").
+- Recordatorio de 2 s al inicio de los capítulos 2 y 3 ("Antes: …").
+Ideas de series: **La Ruleta de Nico** (ruletas de entorno/villano/objeto/estilo; la primera serie debería ser esta),
+Nico en el apocalipsis zombie, Nico atrapado en un videojuego, Nico encogido en su casa, Nico náufrago,
+Nico en Marte, Nico contra una IA malvada, Nico en el Titanic. Ideas de comentarios = prioridad.
+Registrar en `historial.md` la serie y el capítulo (ej. "Serie: La Ruleta de Nico · 1/3") para que la siguiente
+corrida de la tarde sepa por dónde va. Al terminar una serie, la siguiente arranca al día siguiente.
+
+### Estilos visuales para rotar (2D posibles aquí)
+Caricatura (actual), cómic con viñetas, pixel art, pizarra con tiza, boceto con brillo neón, vector plano,
+línea minimalista. Una serie mantiene el mismo estilo en sus 3 capítulos.
 
 ## Cómo hacer un episodio
 1. Crear `episodios/AAAA-MM-DD-slug/` y copiar `episodio.py` del último episodio.
