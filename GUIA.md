@@ -53,7 +53,7 @@ pizarra con tiza, boceto con brillo neón, vector plano, línea minimalista.
 7. Agregar una línea a `historial.md`.
 
 ## Publicar (Metricool)
-`createScheduledPost` con `blogId 8043911`, **todos los días a las 16:00 hora Bogotá** (lo pidió Daniel). `info`:
+`createScheduledPost` con `blogId 8043911`, **dos videos al día: 08:00 y 18:00 hora Bogotá** (lo pidió Daniel). La corrida de la madrugada hace el de las 8 a. m. y la de la tarde el de las 6 p. m.; los dos del mismo día deben ser temas/formatos distintos. `info`:
 - `providers`: `[{"network":"tiktok"},{"network":"youtube"}]`
 - `media`: `[link raw del video]`
 - `text`: descripción con gancho + pregunta + hashtags (#Shorts #QuePasariaSi #MundoHipotetico + 2–3 del tema)
