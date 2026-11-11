@@ -102,3 +102,13 @@ línea minimalista. Una serie mantiene el mismo estilo en sus 3 capítulos.
 ## Redes
 - Activas: TikTok + YouTube (Shorts). Instagram (Reels) se sumará cuando Daniel cree la cuenta y la
   conecte en Metricool: entonces agregar `{"network":"instagram"}` con `instagramData: {"type":"REEL", "isAiGenerated": true}`.
+
+## Recopilatorio semanal (domingos, YouTube video normal)
+- Lo hace una tarea aparte cada domingo. Junta los Shorts publicados de lunes a domingo (según `historial.md`),
+  primero las series completas (capítulos 1→3 seguidos) y luego las historias sueltas de la mañana.
+- Comando: `python3 compilar.py episodios/recopilatorios/AAAA-MM-DD/video.mp4 "<título>" "episodios/<carpeta>|<título corto>" ...`
+  (16:9, 1920×1080, portada con Nico, tarjeta antes de cada historia, cierre pidiendo ideas). Sin voz nueva.
+- Ideal 8+ minutos (permite anuncios a mitad de video). Con 14 Shorts sale ~9–10 min.
+- Publicar en Metricool solo en YouTube como `"type": "video"` (no short), domingo 16:00 Bogotá,
+  `category: "COMEDY"`, título tipo "¿Qué pasaría si…? 🌀 Las 14 historias de la semana de Nico", descripción con
+  capítulos (marcas de tiempo) y `autoPublish: false`.
