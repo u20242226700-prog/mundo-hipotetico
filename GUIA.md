@@ -50,10 +50,21 @@ explica un secreto de ingeniería/ciencia** (referencia: "Why Perfect Railroads 
   de acero flotan, cables de alta tensión que cuelgan, por qué las represas son curvas, neumáticos con dibujo.
 - Dato verificado con fuente en la descripción. Título: "¿Por qué <cosa> tiene <detalle raro>?" o
   "El ingeniero que hizo <cosa rara>… y tenía razón".
-- **Plantilla de referencia aprobada como prueba:** `plantillas/porque_ejemplo.py` (ventanas de avión redondas):
-  letrero "¿POR QUÉ?" fijo arriba, escenarios con profundidad (cielo con nubes en movimiento, hangar en
-  perspectiva con luces), objetos con volumen, mapas de fuerza/calor animados, contador grande, grieta con
-  sacudida, Nico (hoodie turquesa) vs. rival (hoodie rojo, mismo dibujo con otro color).
+- **ESTILO OBLIGATORIO (Daniel, 2026-11-12: "la animación como la del link de YouTube"): 2.5D.**
+  Plantilla: `plantillas/porque_ejemplo.py` (ventanas de avión, se apoya en `plantillas/porque_base.py`).
+  - Personajes con `figura()`: palito 2D plano, cabeza blanca ovalada grande, extremidades negras, contorno
+    grueso, capucha del color de la sudadera (Nico turquesa, rival rojo con pelo en punta, extras grises).
+    Expresiones exageradas: neutral, happy, smug, worried, angry, shock (ojos enormes), laugh. Rabia = cara
+    morada (`cara=PURP`) + `vapor=True`; susto = `sudor=True`. Poses: idle, point, arms_up, cross, laugh, shock, chin.
+  - Mundo con perspectiva REAL: `pista()` (pista que corre hacia el horizonte con `vel`, pasto a rayas,
+    montañas, niebla), `hangar2()` (punto de fuga, cerchas, portón al cielo), `cielo2()` (nubes con volumen).
+    Para otros temas crea escenarios igual: suelo proyectado por profundidad + niebla + sombras duras.
+  - Ciencia = mapa térmico neón (morado→rosa→amarillo) sobre el objeto real (`piel()` + `neon_map()`), con zoom
+    de cámara al punto crítico.
+  - Utilería de papel con sombra (`pegar()`): periódico con titular, calendario que pasa años, manómetro, etc.
+  - **Cortes cada 1–2 s:** cada frase tiene 2 planos (`corte(t, D)`): plano general → primer plano/reacción.
+  - Letrero "¿POR QUÉ?" con borde negro, subtítulos amarillos/blancos con borde negro, sin grano
+    (`postproceso(..., tono="neutro", bloom=0.22, grano=0, motas=False)`).
 - Exporta con `-crf 23` (el grano del realce hace pesados los archivos).
 Los días IMPARES sigue el "¿Qué pasaría si…?" normal.
 
@@ -71,6 +82,15 @@ Registrar en `historial.md` la serie y el capítulo (ej. "Serie: La Ruleta de Ni
 corrida de la tarde sepa por dónde va. Al terminar una serie, la siguiente arranca al día siguiente.
 
 ### Estilos visuales para rotar (2D posibles aquí)
+- **Referencia de Daniel 2026-11-12 (reel Dfo8Vvlowmh, "10 estilos de animación"):** la misma escena se puede
+  contar en estilos muy distintos. Los que se pueden hacer con código aquí: **cómic** (contornos gruesos,
+  tramas de puntos, onomatopeyas "¡BOOM!"), **pixel art** (dibujar a 1/8 de resolución y escalar con NEAREST,
+  marcador retro), **trazo de luz** (fondo negro, líneas neón con glow que dibujan la trayectoria), **flat**
+  (vectores planos, fichas y flechas punteadas), **pizarra** (fondo verde/negro, tiza con trazo irregular).
+  Los de CGI, PS2, bloques y figura 3D necesitan Blender (red bloqueada en este chat).
+  Uso: el 08:00 impar rota de estilo cada semana (lunes decide), Nico siempre igual de reconocible.
+  Idea de formato para probar un domingo o un día flojo: "La misma historia en 5 estilos" con lista
+  numerada al costado que avanza, y CTA "Comenta ESTILOS" (pedir una palabra en comentarios sube la interacción).
 Caricatura (actual), cómic con viñetas, pixel art, pizarra con tiza, boceto con brillo neón, vector plano,
 línea minimalista. Una serie mantiene el mismo estilo en sus 3 capítulos.
 
@@ -94,7 +114,23 @@ línea minimalista. Una serie mantiene el mismo estilo en sus 3 capítulos.
 `createScheduledPost` con `blogId 8043911`, **dos videos al día: 08:00 y 18:00 hora Bogotá** (lo pidió Daniel). La corrida de la madrugada hace el de las 8 a. m. y la de la tarde el de las 6 p. m.; los dos del mismo día deben ser temas/formatos distintos. `info`:
 - `providers`: `[{"network":"tiktok"},{"network":"youtube"}]`
 - `media`: `[link raw del video]`
-- `text`: descripción con gancho + pregunta + hashtags (#Shorts #QuePasariaSi #MundoHipotetico + 2–3 del tema)
+- `text`: descripción con gancho + pregunta + hashtags (ver "Hashtags" abajo)
+- **Hashtags (investigado 2026-11-12, pedido de Daniel: "busca hashtags más virales").** Fuente: outliers en
+  español de nuestro nicho (videos animados de "¿qué pasaría si?", historias y ciencia, con 7–500x las vistas
+  normales del creador). Regla: **5–6 hashtags, al final del texto**, mezcla de 1 de descubrimiento + 2 de
+  formato + 2 de tema + la marca. Más de 6 o puros genéricos (#fyp #viral #parati sueltos) no ayudan: TikTok
+  clasifica por tema. Los 3 primeros salen encima del título en YouTube, así que ahí van los de más búsqueda.
+  - 08:00 "¿Qué pasaría si…?": `#quepasariasi #historiasanimadas #curiosidades #historia #parati #mundohipotetico`
+    (cambia #historia por #ciencia, #espacio, #roma, #egipto… según el tema).
+  - Días pares "¿Por qué…?": `#sabiasque #datoscuriosos #ciencia #ingenieria #aprendecontiktok #mundohipotetico`
+    (+ uno del objeto: #aviones, #trenes, #puentes…).
+  - 18:00 series: `#historiasanimadas #animacion #parte1 (2/3) #quepasariasi #fyp #mundohipotetico`
+    (#parte1 / #parte2 / #parte3 ayuda a que encuentren la serie completa).
+  - YouTube: además agrega `#shorts` como primer hashtag del texto, y en `youtubeData.tags` pon 8–12
+    palabras clave sin # (ej.: "que pasaria si", "curiosidades", "animacion", "historia", "datos curiosos").
+  - En los estudios de lunes/miércoles/viernes revisa los hashtags de los outliers nuevos
+    (`vidiq_instagram_tiktok_outlier_search`, 5 créditos, idioma es) y anota en `estudio.md` si aparece uno
+    que se repita en 2+ videos virales; si es del tema del video, úsalo.
 - `youtubeData`: `{"title": "<título ≤ 90 car. con emoji>", "type": "short", "privacy": "public", "madeForKids": false, "category": "COMEDY", "tags": [...]}`
 - `tiktokData`: `{"title": "<igual>", "privacyOption": "PUBLIC_TO_EVERYONE", "isAigc": true}`
 - **`autoPublish: false`** → Daniel recibe la notificación en la app de Metricool y publica con un toque.
