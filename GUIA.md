@@ -74,6 +74,24 @@ Tú eliges la idea y haces todo. Cada serie = 3 videos seguidos de las 6 p. m. (
 - Capítulo 2: complica la situación. Termina en suspenso ("¿Cómo sale de esta? Parte 3 mañana").
 - Capítulo 3: resolución + pregunta para la próxima serie ("¿Qué le ponemos en la próxima?").
 - Recordatorio de 2 s al inicio de los capítulos 2 y 3 ("Antes: …").
+- **MECÁNICA OBLIGATORIA "RULETA + EL PÚBLICO ELIGE"** (Daniel, 2026-11-12 11:35: "a esto me refiero con las
+  series de las 6, no igual pero con ese funcionamiento"; referencia IG @ruletazombie, solo la mecánica):
+  1. **Ruleta en escenario oscuro con reflectores:** al inicio gira una ruleta/tómbola y sale el reto del
+     capítulo (amenaza, lugar, objeto o regla). Se ven las opciones posibles como carteles bajo luces
+     (ej. "LOBO", "???", "TORMENTA") con un "???" misterioso; la ruleta frena con suspenso y sonido de clics.
+  2. **Nico enfrenta lo que salió** con una regla clara del mundo ("la criatura solo ataca en la oscuridad",
+     "tiene 3 objetos y 1 noche"). Reglas simples = el público puede razonar y opinar.
+  3. **Final con DECISIÓN DEL PÚBLICO:** el capítulo termina en un dilema con 2 opciones numeradas en pantalla
+     ("1 · Esconderse en el faro" / "2 · Huir en el bote"), congelado, y Nico/narrador pide:
+     "¿Qué haría Nico? Comenta 1 o 2. En la próxima parte verás si elegiste bien."
+  4. **El siguiente capítulo revela** qué pasa con la opción MÁS comentada (léela en los comentarios de TikTok
+     y YouTube con Metricool/vidIQ antes de escribir el guion) y menciona "la mayoría eligió la 2…".
+     Si nadie comentó, elige la opción con más tensión. El capítulo 3 cierra la historia y gira la ruleta
+     de la próxima serie como avance.
+  5. Texto fijo "CAPÍTULO 1/3" arriba, título de la serie con identidad propia (ej. "LA RULETA DE NICO"),
+     paleta oscura con acentos rojos/neón y reflectores, en el estilo vector + cómic elegido.
+  6. Descripción: "🎰 Capítulo 1/3 · <serie>\n💬 Comenta 1 o 2 y en la próxima parte verás si elegiste bien"
+     + hashtags de series (#parte1…). La pregunta 1/2 es la que más comentarios genera: no la quites nunca.
 Ideas de series: **La Ruleta de Nico** (ruletas de entorno/villano/objeto/estilo; la primera serie debería ser esta),
 Nico en el apocalipsis zombie, Nico atrapado en un videojuego, Nico encogido en su casa, Nico náufrago,
 Nico en Marte, Nico contra una IA malvada, Nico en el Titanic. Ideas de comentarios = prioridad.

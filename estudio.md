@@ -29,3 +29,8 @@
   Edad de Piedra" con el motor 3D clay nuevo (episodios/borrador-pizza-edad-piedra/video.mp4, sin publicar).
   Hallazgo: los Shorts/Reels animados que más se disparan son historias con personajes de aspecto 3D, luz
   "real", actuación y diálogo; tendencia 2026 = híbrido 2D–3D con textura.
+- 2026-11-12 11:35 — Referencia de Daniel para las series de las 6 p. m.: IG @ruletazombie (reel DfpHWhsO-z4,
+  7.5K likes y 180 comentarios en 3 h). Mecánica: ruleta en escenario oscuro con reflectores elige la
+  amenaza, "Capítulo 1/3", y al final el público elige 1 o 2 en comentarios ("en la próxima parte verás si
+  elegiste bien"); casi todos los comentarios son "1" o "2". Guardado en GUIA.md como mecánica obligatoria.
+  vidIQ dio Bad Gateway, se vio la página del reel en el navegador.
