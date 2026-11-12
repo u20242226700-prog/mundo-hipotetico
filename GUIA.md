@@ -25,6 +25,8 @@ subtítulos, música y efectos. Esta guía es lo que sigue la tarea programada c
 - Fuentes de datos van en la descripción, nunca en pantalla.
 - Voz acelerada ×1.12 (ffmpeg `atempo=1.12` + `silenceremove` al inicio y final).
 
+**Antes de producir:** si `historial.md` ya tiene una línea para la misma fecha y franja (08:00 o 18:00), esa franja ya está hecha o en producción: NO hagas otro video; solo revisa que esté programada.
+
 ## Qué va en cada horario (decidido por Daniel el 2026-11-11)
 ### 08:00 — video suelto "¿Qué pasaría si…?"
 Una historia completa en un solo video, como la de Egipto. Dos familias, alternando:
