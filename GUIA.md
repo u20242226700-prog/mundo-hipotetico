@@ -227,8 +227,13 @@ línea minimalista. Una serie mantiene el mismo estilo en sus 3 capítulos.
     que se repita en 2+ videos virales; si es del tema del video, úsalo.
 - `youtubeData`: `{"title": "<título ≤ 90 car. con emoji>", "type": "short", "privacy": "public", "madeForKids": false, "category": "COMEDY", "tags": [...]}`
 - `tiktokData`: `{"title": "<igual>", "privacyOption": "PUBLIC_TO_EVERYONE", "isAigc": true}`
-- **`autoPublish: false`** → Daniel recibe la notificación en la app de Metricool y publica con un toque.
-  No cambiar a publicación automática sin que Daniel lo pida expresamente.
+- **`autoPublish: true`** (Daniel lo pidió el 2026-11-12 18:09: "quiero que automáticamente se suba en TikTok
+  igual"). Con `false`, Metricool NO publica en TikTok: solo manda una notificación y el video nunca llega
+  (así se perdieron en TikTok el de Roma y el capítulo 1 de la Ruleta). Publica siempre en automático en TikTok
+  y YouTube, y manda a Daniel el video y el enlace en el mensaje del día para que lo vea.
+- Después de publicar, comprueba en `getScheduledPosts` que TikTok tenga `id`/`publicUrl`. Si sale "PUBLISHED"
+  sin id, no se publicó: reprograma solo TikTok con `autoPublish: true` y avisa a Daniel.
+- La cuenta real de TikTok es **@mundohipotetico.es** (la @mundohipotetico sin ".es" es de otra persona).
 
 ## Estudio diario (antes de elegir el tema)
 1. **Mis resultados:** con Metricool (getAnalyticsDataByMetrics / getScheduledPosts) revisa vistas, likes,
@@ -278,7 +283,7 @@ línea minimalista. Una serie mantiene el mismo estilo en sus 3 capítulos.
 - Ideal 8+ minutos (permite anuncios a mitad de video). Con 14 Shorts sale ~9–10 min.
 - Publicar en Metricool solo en YouTube como `"type": "video"` (no short), domingo 16:00 Bogotá,
   `category: "COMEDY"`, título tipo "¿Qué pasaría si…? 🌀 Las 14 historias de la semana de Nico", descripción con
-  capítulos (marcas de tiempo) y `autoPublish: false`.
+  capítulos (marcas de tiempo) y `autoPublish: true`.
 
 ## Calidad (pedido de Daniel el 2026-11-12: "que no se vean tan sencillos") — OBLIGATORIO
 ### Historia y guion
