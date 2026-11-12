@@ -113,3 +113,27 @@ línea minimalista. Una serie mantiene el mismo estilo en sus 3 capítulos.
 - Publicar en Metricool solo en YouTube como `"type": "video"` (no short), domingo 16:00 Bogotá,
   `category: "COMEDY"`, título tipo "¿Qué pasaría si…? 🌀 Las 14 historias de la semana de Nico", descripción con
   capítulos (marcas de tiempo) y `autoPublish: false`.
+
+## Calidad (pedido de Daniel el 2026-11-12: "que no se vean tan sencillos") — OBLIGATORIO
+### Historia y guion
+- Estructura de cada video: **gancho** (1 s, pregunta absurda o imagen impactante) → **escalada** (cada escena
+  sube la apuesta: ventaja → abuso de la ventaja → consecuencia) → **giro** inesperado → **remate** gracioso
+  → **loop/pregunta**. Nada de escenas "de relleno": cada frase debe cambiar la situación.
+- Nico **habla y reacciona** (2–4 líneas propias tipo "¿Y ahora qué hago?" en burbuja o voz), no solo el narrador.
+- Al menos 1 dato real sorprendente por video (en la mañana), dicho de forma graciosa.
+- Chistes visuales de fondo (un personaje haciendo algo raro detrás) para que la gente lo vuelva a ver.
+### Encuadre y animación
+- El personaje principal ocupa **35–60 % de la altura** del cuadro en la mayoría de planos; usa primeros planos
+  de cara para las reacciones (al menos 3 por video). Nada de personajes chiquitos en escenarios vacíos.
+- Las caras quedan entre y=600 y y=1350 del cuadro final para que el subtítulo (y≈1600) no tape la cara ni el torso.
+- Siempre hay algo moviéndose: parpadeo (realce.parpadeo), personajes de fondo animados, partículas, cámara.
+- Ángulos variados: plano general → medio → primer plano; picados/contrapicados en momentos dramáticos.
+- Multitudes y fondos con **capas** (lejos más claro/difuso, cerca más oscuro y nítido), no cuadritos planos.
+- Texturas suaves en suelos/paredes (ruido, vetas, ladrillos) y sombras de contacto.
+### Motor de realce (motor/realce.py) — usar en TODOS los episodios
+- `realce.aplicar(globals(), [<funciones de personajes>], ambiente=...)` → volumen y luz de contorno.
+- En `frame()`: `img = realce.postproceso(img, T, tono=..., rayos=(x, y) si hay sol/foco)` antes de los subtítulos.
+- Parpadeo de Nico con `realce.parpadeo(T)` (ver episodio de Roma mejorado como ejemplo).
+### Revisión antes de publicar
+Mira 6–8 fotogramas a tamaño grande (no solo la hoja pequeña) y corrige si: algo se ve plano o vacío, un
+personaje está cortado o muy pequeño, el subtítulo tapa una cara, o una escena dura >4 s sin cambio.
