@@ -115,6 +115,25 @@ diferencie… a Nico puedes irle cambiando la ropa a veces")
   antes de la pregunta para comentar.
 - No repetir el mismo traje dos días seguidos; anota el traje en `historial.md`.
 
+### MOTOR VECTOR + CÓMIC ANIMADO (2026-11-12, primer episodio: La Ruleta de Nico 1/3) — USAR ESTE
+`motor/vc.py` + plantilla completa `plantillas/ruleta_cap1.py` (episodio en `episodios/2026-11-12-1800-ruleta-piratas/`).
+- `Cam(cx, cy, z)` (zoom/paneo), `D(cam, bg)` lienzo plano con máscara de sombra y máscara "sin línea";
+  `dr.poly/ell/rrect/line/chord/pie/text` (todo plano, sin degradados). `tinta(dr)` = contornos + trama +
+  saturación; luego `add_glow`, `add_cono` (reflectores) sobre el array; `acabado(f, T)` = viñeta + grano.
+- Personajes: `nico(dr, x, y_pies, s, t, traje=…, arms=(°,°), elbows=(°,°), mouth, expr, look, squash, sick, sweat)`
+  (expr: happy, happy_eyes, worried, nervous, shock, smug, angry), `capitan()`, `loro()`, `aleta()`, `tiburon()`.
+  Para trajes nuevos agrega ramas en `nico()` (ver `plantillas/nico_vestuario.py`).
+- La serie La Ruleta de Nico usa SIEMPRE: escenario de ruleta con telones y reflectores, ruleta de 8 casillas
+  (`SEG`, `ang_ruleta` para frenar en la casilla elegida), insignias "LA RULETA DE NICO" + "CAPÍTULO X/3",
+  tarjeta de nombre de personaje, burst cómico (`burst`), pantalla de dilema 1/2 y tarjeta "COMENTA 1 o 2",
+  cierre con portal + "CAPÍTULO N · MAÑANA 6 P. M.".
+- Capítulos 2 y 3 de la serie pirata: mismos personajes (Nico pirata, Capitán Barbagris, loro, tiburones).
+  El cap. 2 empieza con "Antes en La Ruleta de Nico…" (3 s) y sigue la opción más comentada (1 = mapa a la
+  Isla Calavera, 2 = confiar en el loro); termina con otro dilema 1/2. El cap. 3 cierra (tesoro, giro final
+  con el loro o el capitán) y gira la ruleta para anunciar la próxima serie.
+- Render ≈ 0.3 s por cuadro (≈15 min un capítulo de 90 s). Voces: narrador Adrián, Nico Johan,
+  capitán openai onyx con instrucciones, loro openai coral + `asetrate=31200,aresample=24000` (más agudo).
+
 ### ESTILO VISUAL ELEGIDO POR DANIEL (2026-11-12 11:37): mezcla A + B — "vector plano + cómic"
 Daniel dijo que el borrador 3D clay "está horrible" y que siempre salían los mismos dibujos. Se le mostró un
 tablero con 3 estilos (A vector plano, B cómic, C siluetas 3D) y eligió **A y B mezclados**. Referencia:
