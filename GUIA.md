@@ -50,21 +50,20 @@ explica un secreto de ingeniería/ciencia** (referencia: "Why Perfect Railroads 
   de acero flotan, cables de alta tensión que cuelgan, por qué las represas son curvas, neumáticos con dibujo.
 - Dato verificado con fuente en la descripción. Título: "¿Por qué <cosa> tiene <detalle raro>?" o
   "El ingeniero que hizo <cosa rara>… y tenía razón".
-- **ESTILO OBLIGATORIO (Daniel, 2026-11-12: "la animación como la del link de YouTube"): 2.5D.**
-  Plantilla: `plantillas/porque_ejemplo.py` (ventanas de avión, se apoya en `plantillas/porque_base.py`).
-  - Personajes con `figura()`: palito 2D plano, cabeza blanca ovalada grande, extremidades negras, contorno
-    grueso, capucha del color de la sudadera (Nico turquesa, rival rojo con pelo en punta, extras grises).
-    Expresiones exageradas: neutral, happy, smug, worried, angry, shock (ojos enormes), laugh. Rabia = cara
-    morada (`cara=PURP`) + `vapor=True`; susto = `sudor=True`. Poses: idle, point, arms_up, cross, laugh, shock, chin.
-  - Mundo con perspectiva REAL: `pista()` (pista que corre hacia el horizonte con `vel`, pasto a rayas,
-    montañas, niebla), `hangar2()` (punto de fuga, cerchas, portón al cielo), `cielo2()` (nubes con volumen).
-    Para otros temas crea escenarios igual: suelo proyectado por profundidad + niebla + sombras duras.
-  - Ciencia = mapa térmico neón (morado→rosa→amarillo) sobre el objeto real (`piel()` + `neon_map()`), con zoom
-    de cámara al punto crítico.
-  - Utilería de papel con sombra (`pegar()`): periódico con titular, calendario que pasa años, manómetro, etc.
-  - **Cortes cada 1–2 s:** cada frase tiene 2 planos (`corte(t, D)`): plano general → primer plano/reacción.
-  - Letrero "¿POR QUÉ?" con borde negro, subtítulos amarillos/blancos con borde negro, sin grano
-    (`postproceso(..., tono="neutro", bloom=0.22, grano=0, motas=False)`).
+- **ESTILO OBLIGATORIO DÍAS PARES (Daniel, 2026-11-12 11:03: "este tipo de animación es el que quiero para los
+  días pares", referencia TikTok @finanz_ia 7707039586471431457 — solo el ESTILO, nunca su tema).**
+  Análisis vidIQ: personajes chibi de cabeza-esfera (≈40 % de la altura) con extremidades finas tipo palito,
+  contorno negro grueso (4–6 px), sombreado cel de 2 tonos con corte duro (nada de degradados suaves), sets en
+  3D simple con sombreado plano, presentador en cámara que habla y gesticula, cortes de 0.8–1.6 s, tarjetas
+  diagonales con números de paso ("1", "2", "3") que cruzan la pantalla, iconos 2D flotantes (✗ rojas,
+  estrellas, etiquetas de precio), subtítulos palabra por palabra amarillos #F8E71C con borde negro,
+  empujones de cámara rápidos y sacudidas de 2 cuadros en los golpes, viñeta suave y grano bajo.
+  **Cómo hacerlo aquí:** usar el MOTOR 3D clay (ver más abajo) en modo cel:
+  `for m in (clay.SKIN, clay.CLOTH, clay.GLOSS, clay.HAIR, clay.STONE, clay.FUR, clay.EYE): m.toon = 1.0; m.spec = min(m.spec, 0.15); m.shin = 200; m.rim = 0.25`
+  y `clay.LIGHT["ao"] = 0.25`, `render(..., outline_px=8)`. Nico es el presentador (habla a cámara con lip sync
+  y voz Johan), el rival/extras con cabeza blanca (`_face(..., skin=(250,250,250))`). Estructura del guion:
+  gancho → pasos numerados con tarjeta diagonal → explicación visual del secreto de ingeniería → remate.
+  La plantilla 2.5D anterior (`plantillas/porque_ejemplo.py`) queda solo como respaldo.
 - Exporta con `-crf 23` (el grano del realce hace pesados los archivos).
 Los días IMPARES sigue el "¿Qué pasaría si…?" normal.
 
@@ -80,6 +79,32 @@ Nico en el apocalipsis zombie, Nico atrapado en un videojuego, Nico encogido en 
 Nico en Marte, Nico contra una IA malvada, Nico en el Titanic. Ideas de comentarios = prioridad.
 Registrar en `historial.md` la serie y el capítulo (ej. "Serie: La Ruleta de Nico · 1/3") para que la siguiente
 corrida de la tarde sepa por dónde va. Al terminar una serie, la siguiente arranca al día siguiente.
+
+### MOTOR 3D "clay" (borrador premium del 2026-11-12, pedido de Daniel: "lo mejor de lo mejor")
+Investigación (web + outliers vidIQ): lo que más vistas saca en Shorts/Reels son historias animadas con
+personajes que se ven 3D, luz "real", actuación y diálogo; la tendencia 2026 es el híbrido 2D–3D.
+Sin Blender aquí, así que hay un renderizador propio en numpy: `motor/clay.py` + `motor/personajes.py` +
+`motor/escenario.py` (plantilla completa: `plantillas/pizza_edad_piedra.py`).
+- Personajes = esferas, elipsoides, cápsulas y cajas con luz principal cálida, relleno frío, luz de borde,
+  brillo especular, oclusión ambiental y contorno. La cara va PINTADA sobre la esfera (`Scene.head`), así
+  gira bien en 3/4. No girar la cara más de ~30° respecto a cámara (ya está limitado en `nico()`).
+- `nico(sc, x, y, z, t, arms=(…), expr=…, mouth=…, look=…, yaw=…, head_yaw=…, squash=…)`: brazos con
+  presets ("down", "up", "wave", "hold", "offer", "point", "shrug", "hip", "grind", "think") o tuplas
+  (hombro°, codo°, adelante). Expresiones: happy, neutral, nervous, shock, angry, sad.
+  `cavernicola()` (5 variantes), `mamut()`, `pizza()`, `caja_pizza()`, `roca()`, `gema()`.
+  Para otros temas crea personajes nuevos con el mismo sistema (romanos, vikingos, astronautas…).
+- Ubicar en pantalla: `gp(x_pantalla, y_pies, S)` → coords de mundo; `render(sc, S, 0, 0, W, H, luz)`.
+  Luz de fogata: `luz_fuego(...)`.
+- **Lip sync:** la boca sigue la envolvente de la voz (`boca(k, t)`) cuando habla ese personaje.
+- **Voces:** narrador Adrián (soniox). Nico habla con "Johan - Colombiano" (elevenlabs, modelo
+  eleven_v3_conversational, voz 4uvQjLPvqApx1dVzpNfM, admite [excited], [nervous]). Cavernícolas/monstruos:
+  openai gpt-4o-mini-tts voz "onyx" con `instructions` de actuación. Verifica con audio_transcribe.
+  Cada video debe tener al menos 2 frases de diálogo de Nico (no solo narrador).
+- Escenario: capas con parallax y desenfoque por profundidad (`valle()`, `componer()`, `cam_pt()`),
+  efectos: fuego, humo, olor, portal, chispas, polvo, corazones, texto cómic, tarjetas ✓/✗, líneas de velocidad.
+- Cortes cada 2–4 s, empujón de cámara al inicio de cada plano, barrido con desenfoque en los cortes,
+  sacudida en impactos, sonido procedural sincronizado (tambores, whoosh, golpes, rugidos).
+- Render: ~0.8 s por cuadro (≈18 min un video de 45 s). Probar antes con PREVIEW y BIG.
 
 ### Estilos visuales para rotar (2D posibles aquí)
 - **Referencia de Daniel 2026-11-12 (reel Dfo8Vvlowmh, "10 estilos de animación"):** la misma escena se puede

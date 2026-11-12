@@ -21,3 +21,11 @@
   1–2 s; mapas térmicos neón (morado→rosa→amarillo); utilería de papel (periódico, calendario); subtítulos
   amarillos/blancos con borde negro. Plantilla nueva: plantillas/porque_ejemplo.py.
 - Reel Dfo8Vvlowmh (Daniel, 10:18): misma jugada en 10 estilos de animación; guardado como rotación de estilos en GUIA.md.
+- 2026-11-12 11:03 — Daniel eligió para los días pares el estilo del TikTok @finanz_ia 7707039586471431457
+  (chibi cabeza-esfera, cel 2 tonos, contorno grueso, sets 3D simples, tarjetas diagonales numeradas, cortes
+  ~1 s). Se hace con el motor clay en modo cel. Del video solo se toma el estilo: su tema (formas "poco éticas"
+  de ganar dinero) no se copia ni se imita.
+- 2026-11-12 10:31–11:30 — Investigación de estilos (web + outliers vidIQ) y borrador premium "pizzería en la
+  Edad de Piedra" con el motor 3D clay nuevo (episodios/borrador-pizza-edad-piedra/video.mp4, sin publicar).
+  Hallazgo: los Shorts/Reels animados que más se disparan son historias con personajes de aspecto 3D, luz
+  "real", actuación y diálogo; tendencia 2026 = híbrido 2D–3D con textura.
