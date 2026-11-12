@@ -34,6 +34,24 @@ Una historia completa en un solo video, como la de Egipto. Dos familias, alterna
   internet, los relojes, el papel, el azúcar…) o con una regla cambiada (si los perros hablaran, si
   durmiéramos 1 hora, si la gravedad fuera la mitad…). Mezclar humor con 2–3 datos reales verificados.
 
+### Cada 2 días a las 08:00 — formato "¿Por qué…?" (pedido de Daniel el 2026-11-12)
+Los días PARES del mes (2, 4, 6…) el video de las 8 a. m. NO es "¿Qué pasaría si…?" sino una **historia que
+explica un secreto de ingeniería/ciencia** (referencia: "Why Perfect Railroads Don't Work", @RicksClips3000,
+559 K likes). Fórmula analizada con vidIQ:
+- **Montaje:** dos rivales (Nico vs. un rival) compiten por algo grande (cruzar un cañón, construir una torre…).
+- **Conflicto:** Nico hace algo que parece un error (deja huecos entre los rieles) y su jefe se enoja.
+- **Éxito del rival:** el rival lo hace "perfecto", gana al principio y la gente se va con él.
+- **La ciencia actúa:** llega el calor, el frío, el viento… se ven los números (termómetro, regla, medidor).
+- **Clímax:** lo del rival falla de forma espectacular y lo de Nico funciona → se revela por qué.
+- 60–75 s, narración enérgica, cámara cinematográfica (planos muy abiertos, primeros planos de detalles),
+  colores cálidos de paisaje, personajes simples y expresivos sobre escenarios con mucha profundidad.
+- Ideas: huecos en los rieles (dilatación), juntas en puentes, por qué los aviones tienen ventanas redondas,
+  por qué los rascacielos se balancean, por qué las carreteras tienen grietas a propósito, por qué los barcos
+  de acero flotan, cables de alta tensión que cuelgan, por qué las represas son curvas, neumáticos con dibujo.
+- Dato verificado con fuente en la descripción. Título: "¿Por qué <cosa> tiene <detalle raro>?" o
+  "El ingeniero que hizo <cosa rara>… y tenía razón".
+Los días IMPARES sigue el "¿Qué pasaría si…?" normal.
+
 ### 18:00 — series de 3 capítulos
 Tú eliges la idea y haces todo. Cada serie = 3 videos seguidos de las 6 p. m. (días consecutivos).
 - **Duración de cada capítulo: 70–100 s** (pedido de Daniel el 2026-11-12), más largos que los de la mañana. Guion de 20–28 frases, 22–30 planos, con más desarrollo: diálogo de Nico, giros y más escenas. Sigue siendo vertical 1080×1920 (Shorts admite hasta 3 min). Mantener una escena nueva cada 2–4 s para que no baje la retención.
