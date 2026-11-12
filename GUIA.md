@@ -87,8 +87,11 @@ línea minimalista. Una serie mantiene el mismo estilo en sus 3 capítulos.
    (y para la Ruleta de Nico).
 4. **Outliers (método "pro")**: busca canales de Shorts/videos en español con **menos de 3 meses o pocos videos
    y muchas vistas** en nichos cercanos (qué pasaría si, historias animadas, historia, curiosidades). Si hay
-   conector vidIQ, usa sus herramientas de outliers/tendencias; si no, YouTube con filtro "Esta semana"/"Este mes"
-   y orden por vistas. Anota qué fórmula repiten (gancho, duración, estilo visual, título, miniatura, ritmo) y
+   conector **vidIQ** (conectado el 2026-11-12): `vidiq_outliers` (keyword "qué pasaría si", contentType short,
+   language es, publishedWithin thisMonth, maxSubscribers 200000) y `vidiq_trending_videos` (videoFormat short,
+   videoTitleLanguage es, sortBy vph). **Presupuesto: plan gratis de 150 créditos/mes, 5 por llamada** → solo
+   1 llamada en la corrida de la MAÑANA de lunes, miércoles y viernes (≈13 llamadas/mes). Los demás días, usa lo
+   anotado en estudio.md y YouTube directo. Revisa `vidiq_balance` (gratis) antes; si quedan <20, no gastes. Anota qué fórmula repiten (gancho, duración, estilo visual, título, miniatura, ritmo) y
    **adapta la fórmula** al mundo de Nico. Nunca copies guiones, personajes ni videos de otros.
 5. Anota en `estudio.md` (fecha, 3–5 hallazgos, decisión del día). Repite lo que funciona, corta lo que no.
 
