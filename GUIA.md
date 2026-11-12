@@ -36,6 +36,7 @@ Una historia completa en un solo video, como la de Egipto. Dos familias, alterna
 
 ### 18:00 — series de 3 capítulos
 Tú eliges la idea y haces todo. Cada serie = 3 videos seguidos de las 6 p. m. (días consecutivos).
+- **Duración de cada capítulo: 70–100 s** (pedido de Daniel el 2026-11-12), más largos que los de la mañana. Guion de 20–28 frases, 22–30 planos, con más desarrollo: diálogo de Nico, giros y más escenas. Sigue siendo vertical 1080×1920 (Shorts admite hasta 3 min). Mantener una escena nueva cada 2–4 s para que no baje la retención.
 - Capítulo 1: presenta el problema y engancha ("Parte 1/3" visible al inicio). Termina en suspenso.
 - Capítulo 2: complica la situación. Termina en suspenso ("¿Cómo sale de esta? Parte 3 mañana").
 - Capítulo 3: resolución + pregunta para la próxima serie ("¿Qué le ponemos en la próxima?").
