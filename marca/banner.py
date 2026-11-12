@@ -11,11 +11,28 @@ d = ImageDraw.Draw(img); rng = np.random.default_rng(4)
 for _ in range(500):
     x, y, s = rng.uniform(0, W), rng.uniform(0, H), rng.uniform(1.5, 4)
     d.ellipse([x-s, y-s, x+s, y+s], fill=(255, 255, 255, int(rng.uniform(70, 230))))
-# escenas laterales: pirámide (izq) y columna romana (der), fuera de la zona segura
-d.polygon([(250, 980), (700, 980), (475, 560)], fill=(236, 190, 116, 255)); d.polygon([(475, 560), (700, 980), (520, 980)], fill=(184, 128, 76, 255))
-for x0 in (2150, 2330):
-    d.rectangle([x0, 600, x0+90, 980], fill=(226, 222, 210, 255)); d.rectangle([x0-20, 570, x0+110, 610], fill=(240, 236, 226, 255))
-d.rectangle([2110, 540, 2460, 575], fill=(240, 236, 226, 255))
+# elementos genéricos a los lados (fuera de la zona segura): planeta, reloj, rayo, cohete y signos de pregunta
+def planeta(d, x, y, r):
+    d.ellipse([x-r, y-r, x+r, y+r], fill=(255, 140, 90, 255))
+    d.chord([x-r, y-r, x+r, y+r], 200, 340, fill=(255, 175, 120, 255))
+    d.arc([x-r*1.7, y-r*0.45, x+r*1.7, y+r*0.45], 0, 180, fill=(255, 214, 10, 255), width=14)
+def reloj(d, x, y, r):
+    d.ellipse([x-r, y-r, x+r, y+r], fill=(245, 245, 255, 255), outline=(30, 20, 50, 255), width=12)
+    d.line([x, y, x, y-r*0.65], fill=(30, 20, 50, 255), width=12); d.line([x, y, x+r*0.45, y+r*0.2], fill=(30, 20, 50, 255), width=12)
+def rayo(d, x, y, s):
+    d.polygon([(x, y), (x+60*s, y), (x+20*s, y+90*s), (x+70*s, y+90*s), (x-20*s, y+230*s), (x+10*s, y+120*s), (x-40*s, y+120*s)], fill=(255, 214, 10, 255), outline=(30, 20, 50, 255))
+def cohete(d, x, y, s):
+    d.polygon([(x, y-150*s), (x+55*s, y-40*s), (x+55*s, y+90*s), (x-55*s, y+90*s), (x-55*s, y-40*s)], fill=(240, 240, 250, 255), outline=(30, 20, 50, 255))
+    d.ellipse([x-28*s, y-50*s, x+28*s, y+6*s], fill=(90, 200, 255, 255), outline=(30, 20, 50, 255), width=6)
+    d.polygon([(x-55*s, y+30*s), (x-100*s, y+110*s), (x-55*s, y+90*s)], fill=(255, 80, 90, 255))
+    d.polygon([(x+55*s, y+30*s), (x+100*s, y+110*s), (x+55*s, y+90*s)], fill=(255, 80, 90, 255))
+    d.polygon([(x-30*s, y+90*s), (x+30*s, y+90*s), (x, y+170*s)], fill=(255, 170, 40, 255))
+planeta(d, 330, 640, 110); reloj(d, 300, 960, 85); rayo(d, 620, 1010, 0.9)
+cohete(d, 2250, 700, 1.1); planeta(d, 2330, 1040, 60)
+fq = ImageFont.truetype(E.F_BLACK, 150)
+for (qx, qy, col) in [(560, 470, (90, 230, 255)), (2050, 1020, (200, 120, 255)), (2420, 470, (255, 214, 10))]:
+    d.text((qx, qy), "?", font=fq, fill=col, stroke_width=10, stroke_fill=(20, 10, 40))
+
 # portal + Nico a la izquierda de la zona segura
 cx, cy = 900, 730
 E.glow(img, cx, cy, 560, (150, 80, 255), 0.7)
