@@ -85,7 +85,12 @@ línea minimalista. Una serie mantiene el mismo estilo en sus 3 capítulos.
    (vistas altas en canales pequeños = señal fuerte). TikTok suele pedir login; si no carga, usa YouTube y la web.
 3. **Comentarios:** lee los comentarios de los últimos videos; las ideas de la gente son temas prioritarios
    (y para la Ruleta de Nico).
-4. Anota en `estudio.md` (fecha, 3–5 hallazgos, decisión del día). Repite lo que funciona, corta lo que no.
+4. **Outliers (método "pro")**: busca canales de Shorts/videos en español con **menos de 3 meses o pocos videos
+   y muchas vistas** en nichos cercanos (qué pasaría si, historias animadas, historia, curiosidades). Si hay
+   conector vidIQ, usa sus herramientas de outliers/tendencias; si no, YouTube con filtro "Esta semana"/"Este mes"
+   y orden por vistas. Anota qué fórmula repiten (gancho, duración, estilo visual, título, miniatura, ritmo) y
+   **adapta la fórmula** al mundo de Nico. Nunca copies guiones, personajes ni videos de otros.
+5. Anota en `estudio.md` (fecha, 3–5 hallazgos, decisión del día). Repite lo que funciona, corta lo que no.
 
 ## Referencias que pasó Daniel (Instagram) — tenerlas en cuenta siempre
 - @martivegara.yt (DfVFhIAvRiZ): animación pixel art tipo videojuego con diálogos de texto, "Día 001…365",
@@ -98,6 +103,11 @@ línea minimalista. Una serie mantiene el mismo estilo en sus 3 capítulos.
   PS1, Lego, caricatura 2D, terror liminal, Roblox, pixel art 3D, low-poly. Mantener historia, rotar estilo.
 - @tonistelk (DfenRsSIOqZ): 10 estilos virales: pixel art, pizarra con tiza, boceto con brillo, PS2, cómic,
   vector plano, línea minimalista, CGI, Lego (+1). 
+- @iamakerss (DfIdEa2CRI2): "novato vs pro" en monetización. Novato le pide ideas de nicho a un chat y hace lo
+  mismo que todos; pro usa una herramienta de datos (NexLev) para encontrar **canales nuevos que explotan**
+  (ej. "Historias de Roma" 2,4 M en 1 mes, "Misterios del mar", "Abuelos y la IA") y copia la **fórmula**
+  (formato, ritmo, título, miniatura), no el contenido. Estética: personajes 3D tipo juguete, iluminación de
+  ambiente (lámpara cálida vs luz verde de monitores), paneles de UI con brillo. LECCIÓN → ver "Outliers" en el estudio.
 - Nuevas referencias que mande Daniel: añadirlas aquí con su lección.
 
 ## Redes
