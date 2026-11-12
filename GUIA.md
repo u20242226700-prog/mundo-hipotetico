@@ -98,6 +98,21 @@ Nico en Marte, Nico contra una IA malvada, Nico en el Titanic. Ideas de comentar
 Registrar en `historial.md` la serie y el capítulo (ej. "Serie: La Ruleta de Nico · 1/3") para que la siguiente
 corrida de la tarde sepa por dónde va. Al terminar una serie, la siguiente arranca al día siguiente.
 
+### IDENTIDAD PROPIA DEL CANAL (Daniel, 2026-11-12 11:41: "quiero que tengas tu temática propia, algo que nos
+diferencie… a Nico puedes irle cambiando la ropa a veces")
+- **Nico siempre es reconocible:** pelo de grumos marrón, ojos grandes con brillo, cachetes rosados, sonrisa
+  roja. Eso NO cambia nunca.
+- **"Un mundo, un traje":** Nico se viste según el mundo del episodio (cavernícola, toga romana con laurel,
+  astronauta, pirata, vikingo, samurái, faraón, caballero, explorador, chef…). La sudadera turquesa es su
+  traje "clásico" para episodios modernos. Hoja de vestuario: `marca/nico_vestuario.png`,
+  código: `plantillas/nico_vestuario.py` (función `nico(d, sh, cx, fy, s, traje)`; agrega trajes nuevos ahí).
+- **Regla de marca:** en todo traje hay SIEMPRE algo turquesa (#28BACC): tira, broche, fajín, cinturón, placa.
+- **Firma de entrada:** Nico llega a cada mundo por el portal turquesa/morado (2 s al inicio) y ya sale vestido
+  con el traje de ese mundo (el cambio de ropa ocurre "al cruzar").
+- **Frases fijas:** abre con "¿Y si…?" (el gancho del título) y cierra con "Nos vemos en otro mundo hipotético."
+  antes de la pregunta para comentar.
+- No repetir el mismo traje dos días seguidos; anota el traje en `historial.md`.
+
 ### ESTILO VISUAL ELEGIDO POR DANIEL (2026-11-12 11:37): mezcla A + B — "vector plano + cómic"
 Daniel dijo que el borrador 3D clay "está horrible" y que siempre salían los mismos dibujos. Se le mostró un
 tablero con 3 estilos (A vector plano, B cómic, C siluetas 3D) y eligió **A y B mezclados**. Referencia:
