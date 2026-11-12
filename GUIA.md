@@ -50,6 +50,11 @@ explica un secreto de ingeniería/ciencia** (referencia: "Why Perfect Railroads 
   de acero flotan, cables de alta tensión que cuelgan, por qué las represas son curvas, neumáticos con dibujo.
 - Dato verificado con fuente en la descripción. Título: "¿Por qué <cosa> tiene <detalle raro>?" o
   "El ingeniero que hizo <cosa rara>… y tenía razón".
+- **Plantilla de referencia aprobada como prueba:** `plantillas/porque_ejemplo.py` (ventanas de avión redondas):
+  letrero "¿POR QUÉ?" fijo arriba, escenarios con profundidad (cielo con nubes en movimiento, hangar en
+  perspectiva con luces), objetos con volumen, mapas de fuerza/calor animados, contador grande, grieta con
+  sacudida, Nico (hoodie turquesa) vs. rival (hoodie rojo, mismo dibujo con otro color).
+- Exporta con `-crf 23` (el grano del realce hace pesados los archivos).
 Los días IMPARES sigue el "¿Qué pasaría si…?" normal.
 
 ### 18:00 — series de 3 capítulos
