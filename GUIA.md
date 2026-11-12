@@ -80,6 +80,21 @@ Nico en Marte, Nico contra una IA malvada, Nico en el Titanic. Ideas de comentar
 Registrar en `historial.md` la serie y el capítulo (ej. "Serie: La Ruleta de Nico · 1/3") para que la siguiente
 corrida de la tarde sepa por dónde va. Al terminar una serie, la siguiente arranca al día siguiente.
 
+### ESTILO VISUAL ELEGIDO POR DANIEL (2026-11-12 11:37): mezcla A + B — "vector plano + cómic"
+Daniel dijo que el borrador 3D clay "está horrible" y que siempre salían los mismos dibujos. Se le mostró un
+tablero con 3 estilos (A vector plano, B cómic, C siluetas 3D) y eligió **A y B mezclados**. Referencia:
+`plantillas/estilos.py` (funciones `plano(ink=False)` = A, `plano(ink=True)` = B).
+- Formas vectoriales limpias (polígonos, elipses, rectángulos redondeados), cielos en bandas posterizadas,
+  montañas facetadas (cara de luz + cara de sombra), sombras largas proyectadas, grano fino.
+- Encima, el acabado cómic: contorno de tinta grueso (borde entre regiones de color, ~6–8 px), trama de
+  puntos (halftone) en las zonas de sombra, saturación +35 %, onomatopeyas ("¡ÑAM!", "¡BOOM!") inclinadas.
+- Nico en este estilo: cabeza redonda color piel, pelo de grumos marrón, ojos grandes con brillo, cachetes
+  rosados, sudadera turquesa con cordones blancos y bolsillo, pantalón azul oscuro.
+- El motor clay 3D queda SOLO como respaldo (Daniel no lo quiere como estilo principal). Antes de cada
+  video nuevo mira las referencias que mande Daniel y cambia de ambientación/personajes; no repetir los
+  mismos dibujos de un video a otro.
+- Pendiente: si Daniel activa la red, probar Blender (3D real) mezclado con este acabado cómic.
+
 ### MOTOR 3D "clay" (borrador premium del 2026-11-12, pedido de Daniel: "lo mejor de lo mejor")
 Investigación (web + outliers vidIQ): lo que más vistas saca en Shorts/Reels son historias animadas con
 personajes que se ven 3D, luz "real", actuación y diálogo; la tendencia 2026 es el híbrido 2D–3D.
