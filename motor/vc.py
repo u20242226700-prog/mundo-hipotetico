@@ -138,7 +138,7 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
     bob = S(6) * math.sin(t * 2.6)
     def Y(dy): return y - S(dy) * sq + (bob if dy > 230 else 0)
     def LX(dx, dy): return x + S(dx) * st + lean * S(dy) * 0.25
-    pants = {"sudadera": (40, 52, 92), "pirata": (60, 44, 36)}.get(traje, (40, 52, 92))
+    pants = {"sudadera": (40, 52, 92), "pirata": (60, 44, 36), "heladero": (44, 46, 60)}.get(traje, (40, 52, 92))
     shoe = {"sudadera": (30, 30, 40), "pirata": (24, 20, 20)}.get(traje, (30, 30, 40))
     # piernas
     for sx in (-1, 1):
@@ -153,6 +153,16 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
         dr.rrect(LX(-60, 330), Y(330), LX(60, 262), Y(262), S(30), TURQ_D)
         for sx in (-22, 22): dr.line([(LX(sx, 450), Y(450)), (LX(sx, 392), Y(392))], (250, 250, 250), S(8))
         armc = TURQ
+    elif traje == "heladero":   # chaqueta blanca de heladero, delantal y moño turquesa
+        dr.rrect(tx0, ty0, tx1, ty1, S(90), (250, 250, 246), True)
+        dr.rrect(LX(-96, 340), Y(340), LX(96, 196), Y(196), S(30), TURQ)
+        for k in range(4): dr.rrect(LX(-96 + k * 52, 340), Y(340), LX(-76 + k * 52, 196), Y(196), S(4), (250, 250, 246))
+        for sx in (-1, 1):
+            for k in range(2): dr.ell(LX(sx * 40, 420 - k * 50), Y(420 - k * 50), S(9), S(9), (200, 200, 210))
+        dr.poly([(LX(0, 455), Y(455)), (LX(-50, 480), Y(480)), (LX(-50, 430), Y(430))], TURQ_D)
+        dr.poly([(LX(0, 455), Y(455)), (LX(50, 480), Y(480)), (LX(50, 430), Y(430))], TURQ_D)
+        dr.ell(LX(0, 455), Y(455), S(12), S(12), TURQ)
+        armc = (250, 250, 246)
     else:
         dr.rrect(tx0, ty0, tx1, ty1, S(90), (250, 246, 236), True)
         for k in range(5):
@@ -219,6 +229,9 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
         dr.poly([(hx - S(270), hy - S(105)), (hx, hy - S(330)), (hx + S(270), hy - S(105)), (hx, hy - S(165))], (30, 26, 30))
         dr.ell(hx, hy - S(232), S(28), S(28), TURQ)
         dr.ell(hx, hy - S(232), S(12), S(12), (255, 255, 255))
+    if traje == "heladero":   # gorro de papel blanco con franja turquesa
+        dr.poly([(hx - S(175), hy - S(140)), (hx + S(175), hy - S(140)), (hx + S(135), hy - S(275)), (hx - S(135), hy - S(275))], (252, 252, 248))
+        dr.rrect(hx - S(166), hy - S(195), hx + S(166), hy - S(165), S(4), TURQ)
     return dict(hands=hands, head=(hx, hy), top=(hx, hy - R))
 
 # ------------------------------------------------------------ CAPITÁN BARBAGRIS
