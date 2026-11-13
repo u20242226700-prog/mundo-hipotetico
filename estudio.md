@@ -34,3 +34,22 @@
   amenaza, "Capítulo 1/3", y al final el público elige 1 o 2 en comentarios ("en la próxima parte verás si
   elegiste bien"); casi todos los comentarios son "1" o "2". Guardado en GUIA.md como mecánica obligatoria.
   vidIQ dio Bad Gateway, se vio la página del reel en el navegador.
+
+## 2026-11-13 02:04 — Comentarios que mandó Daniel (capturas) — TENER EN CUENTA
+**La Ruleta de Nico · Cap. 1/3 (piratas)**
+- TikTok: 509 vistas, 12 likes, 3 comentarios: "segundo" (otakusaurio), "segundo" (dominick3), "😂😂😂" (Zzzz, primer comentario).
+  Ojo: "segundo" puede ser voto por la opción 2 o "segundo en comentar"; se cuenta como voto por la 2 con duda.
+- YouTube: 6 comentarios: "buen video crack" (@Aaasaaasaaaasssdfgh, con 3 respuestas), "2" (@AndresSalvador-f9j), "Mapa" (@RauLinCoBar).
+- **Conteo provisional: opción 2 (confiar en el loro) = 3 · opción 1 (mapa) = 1.** Va ganando el LORO.
+  Antes de escribir el cap. 2 (hoy 18:00) vuelve a contar los comentarios en Metricool/TikTok/YouTube; si sigue
+  ganando la 2, el capítulo 2 empieza con "La mayoría eligió el loro…" y nombra a 1–2 usuarios que votaron
+  (ej. "como dijo AndresSalvador…") para premiar a quien comenta.
+**¿Qué pasaría si caes en el Coliseo romano…? (Roma)**
+- TikTok: 522 vistas, 13 likes, 2 comentarios: "a un volcán" (papoi, respondiendo a "¿a qué época lo mando
+  mañana?"), "o bro" (johan, primer comentario).
+- **PETICIÓN DE LA AUDIENCIA: "a un volcán".** Hoy 13 es día impar → el video de las 08:00 debe ser un
+  "¿Qué pasaría si…?" en un VOLCÁN (ej. "¿Qué pasaría si abres una heladería al lado de un volcán?" o
+  "¿Qué pasaría si caes dentro del Vesubio en el año 79?"), con Nico vestido para ese mundo, y la descripción
+  debe decir "Pidieron volcán…" y mencionar a papoi.
+**Lectura:** en TikTok los dos videos pasaron de 500 vistas en pocas horas (YouTube va más lento). La pregunta
+final para comentar está funcionando; mantenerla siempre.
