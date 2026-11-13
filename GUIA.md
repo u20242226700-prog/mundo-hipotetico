@@ -235,6 +235,17 @@ línea minimalista. Una serie mantiene el mismo estilo en sus 3 capítulos.
   sin id, no se publicó: reprograma solo TikTok con `autoPublish: true` y avisa a Daniel.
 - La cuenta real de TikTok es **@mundohipotetico.es** (la @mundohipotetico sin ".es" es de otra persona).
 
+## Responder comentarios (Daniel, 2026-11-13: "quiero que tú respondas comentarios")
+- **YouTube:** canal conectado a vidIQ con permiso de respuesta (canal UCqsGAe0RrAMLlnqiTBt9jPA, verificado
+  `canReply: true` el 2026-11-13). Flujo: `vidiq_video_comments` (5 créditos) de los últimos videos → busca
+  comentarios sin respuesta del canal (`byChannelOwner`) → propón la respuesta exacta a Daniel en el mensaje
+  del día → **solo cuando Daniel dice "dale" (o la corrige)** publícala con `vidiq_reply_to_comment`
+  (1 crédito c/u). Nunca publiques una respuesta que Daniel no haya aprobado con su texto exacto, y nunca
+  repitas una llamada si el resultado fue dudoso (puede duplicar). Si vidIQ pide verificación, pásale el enlace.
+- **TikTok:** no hay herramienta para responder; deja las respuestas listas para que Daniel las pegue.
+- Tono: corto, con emoji, cerrando con una pregunta o con la hora del próximo video. Prioriza votos 1/2 y
+  peticiones de tema. Presupuesto vidIQ: créditos se reinician el 12 de cada mes (150).
+
 ## Estudio diario (antes de elegir el tema)
 1. **Mis resultados:** con Metricool (getAnalyticsDataByMetrics / getScheduledPosts) revisa vistas, likes,
    comentarios y retención de los últimos videos en TikTok y YouTube. Qué tema/formato/estilo rindió más.
