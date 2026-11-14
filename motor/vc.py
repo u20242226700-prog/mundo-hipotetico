@@ -163,6 +163,15 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
         dr.poly([(LX(0, 455), Y(455)), (LX(50, 480), Y(480)), (LX(50, 430), Y(430))], TURQ_D)
         dr.ell(LX(0, 455), Y(455), S(12), S(12), TURQ)
         armc = (250, 250, 246)
+    elif traje == "ingeniero":   # camisa celeste + chaleco naranja con franjas reflectivas turquesa
+        shirt = (170, 204, 236)
+        dr.rrect(tx0, ty0, tx1, ty1, S(90), shirt, True)
+        for sx in (-1, 1):
+            dr.poly([(LX(sx * 22, 462), Y(462)), (LX(sx * 108, 440), Y(440)), (LX(sx * 112, 205), Y(205)), (LX(sx * 22, 200), Y(200))], (250, 128, 30))
+            for yy in (390, 300):
+                dr.poly([(LX(sx * 24, yy), Y(yy)), (LX(sx * 110, yy), Y(yy)), (LX(sx * 110, yy - 26), Y(yy - 26)), (LX(sx * 24, yy - 26), Y(yy - 26))], TURQ)
+        dr.rrect(LX(30, 430), Y(430), LX(80, 395), Y(395), S(4), (250, 250, 250))
+        armc = shirt
     else:
         dr.rrect(tx0, ty0, tx1, ty1, S(90), (250, 246, 236), True)
         for k in range(5):
@@ -232,6 +241,10 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
     if traje == "heladero":   # gorro de papel blanco con franja turquesa
         dr.poly([(hx - S(175), hy - S(140)), (hx + S(175), hy - S(140)), (hx + S(135), hy - S(275)), (hx - S(135), hy - S(275))], (252, 252, 248))
         dr.rrect(hx - S(166), hy - S(195), hx + S(166), hy - S(165), S(4), TURQ)
+    if traje == "ingeniero":   # casco de obra amarillo con franja turquesa
+        dr.chord(hx, hy - S(95), S(185), S(165), 180, 360, (250, 200, 40))
+        dr.rrect(hx - S(235), hy - S(105), hx + S(235), hy - S(80), S(10), (232, 176, 30))
+        dr.rrect(hx - S(24), hy - S(258), hx + S(24), hy - S(100), S(10), TURQ)
     return dict(hands=hands, head=(hx, hy), top=(hx, hy - R))
 
 # ------------------------------------------------------------ CAPITÁN BARBAGRIS
