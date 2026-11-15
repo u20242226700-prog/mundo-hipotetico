@@ -138,8 +138,8 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
     bob = S(6) * math.sin(t * 2.6)
     def Y(dy): return y - S(dy) * sq + (bob if dy > 230 else 0)
     def LX(dx, dy): return x + S(dx) * st + lean * S(dy) * 0.25
-    pants = {"sudadera": (40, 52, 92), "pirata": (60, 44, 36), "heladero": (44, 46, 60), "vikingo": (96, 70, 48), "vikingo_coach": (96, 70, 48)}.get(traje, (40, 52, 92))
-    shoe = {"sudadera": (30, 30, 40), "pirata": (24, 20, 20)}.get(traje, (30, 30, 40))
+    pants = {"sudadera": (40, 52, 92), "pirata": (60, 44, 36), "heladero": (44, 46, 60), "vikingo": (96, 70, 48), "vikingo_coach": (96, 70, 48), "astronauta": (226, 228, 236)}.get(traje, (40, 52, 92))
+    shoe = {"sudadera": (30, 30, 40), "pirata": (24, 20, 20), "astronauta": (120, 126, 140)}.get(traje, (30, 30, 40))
     # piernas
     for sx in (-1, 1):
         dr.rrect(LX(sx * 35 - 18, 230), Y(230), LX(sx * 35 + 18, 10), Y(10), S(14), pants)
@@ -187,6 +187,16 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
             dr.line([(LX(-40, 462), Y(462)), (LX(0, 360), Y(360)), (LX(40, 462), Y(462))], TURQ_D, S(6))
             dr.rrect(LX(-20, 372), Y(372), LX(24, 340), Y(340), S(10), TURQ)
         armc = tun
+    elif traje == "astronauta":   # traje espacial blanco: panel de control, cinturón y hombreras turquesa
+        suit = (236, 238, 246)
+        dr.rrect(tx0, ty0, tx1, ty1 + S(20), S(80), suit, True)
+        dr.rrect(LX(-62, 420), Y(420), LX(62, 320), Y(320), S(14), (90, 100, 120))
+        for k, c in enumerate(((230, 60, 60), (250, 200, 50), (60, 200, 110))): dr.ell(LX(-34 + k * 34, 395), Y(395), S(11), S(11), c)
+        dr.rrect(LX(-40, 360), Y(360), LX(40, 338), Y(338), S(4), (120, 220, 240))
+        dr.rrect(LX(-116, 250), Y(250), LX(116, 212), Y(212), S(8), TURQ)
+        dr.rrect(LX(-122, 500), Y(500), LX(122, 462), Y(462), S(16), TURQ)
+        dr.ell(LX(80, 300), Y(300), S(22), S(22), (240, 120, 50))
+        armc = suit
     else:
         dr.rrect(tx0, ty0, tx1, ty1, S(90), (250, 246, 236), True)
         for k in range(5):
@@ -208,6 +218,7 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
     # cabeza
     hx, hy, R = LX(0, 640), Y(640), S(190)
     face = (196, 222, 150) if sick else SKIN
+    if traje == "astronauta": dr.ell(hx, hy - S(10), R * 1.32 * st, R * 1.32 * sq, (176, 218, 240))   # vidrio del casco (atrás)
     for sx in (-1, 1): dr.ell(hx + sx * R, hy + S(25), S(33), S(45), face)
     dr.ell(hx, hy, R * st, R * sq, face, shade=True)
     for k in range(7):
@@ -269,6 +280,12 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
     if traje == "vikingo_coach":   # cinta deportiva turquesa
         dr.rrect(hx - S(186), hy - S(150), hx + S(186), hy - S(110), S(14), TURQ)
         dr.poly([(hx + S(170), hy - S(140)), (hx + S(250), hy - S(170)), (hx + S(240), hy - S(100))], TURQ_D)
+    if traje == "astronauta":   # aro del casco + brillo del vidrio
+        X, Y0 = dr.cam.p(hx, hy - S(10)); rx, ry = dr.cam.s(R * 1.32 * st), dr.cam.s(R * 1.32 * sq)
+        ww = max(3, int(dr.cam.s(S(22))))
+        dr.d.ellipse([X - rx, Y0 - ry, X + rx, Y0 + ry], outline=(236, 238, 246), width=ww)
+        dr.d.arc([X - rx * 0.82, Y0 - ry * 0.82, X + rx * 0.82, Y0 + ry * 0.82], 200, 250, fill=(255, 255, 255), width=max(2, ww // 2))
+        dr.dn.arc([X - rx * 0.82, Y0 - ry * 0.82, X + rx * 0.82, Y0 + ry * 0.82], 200, 250, fill=255, width=max(2, ww // 2) + 4)
     return dict(hands=hands, head=(hx, hy), top=(hx, hy - R))
 
 # ------------------------------------------------------------ CAPITÁN BARBAGRIS
