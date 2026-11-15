@@ -71,7 +71,7 @@ def main():
         clip_imagen(f"{tmp}/t{k}.png", 1.6, f"{tmp}/{k:02d}a.mp4")
         clip_short(os.path.join(carpeta, "video.mp4"), f"{tmp}/{k:02d}b.mp4")
         partes += [f"{tmp}/{k:02d}a.mp4", f"{tmp}/{k:02d}b.mp4"]
-    tarjeta(f"{tmp}/fin.png", "¿Qué hacemos la próxima semana?", "Comenta tu idea 👇  ·  Suscríbete", con_nico=True)
+    tarjeta(f"{tmp}/fin.png", "¿Qué hacemos la próxima semana?", "Comenta tu idea  ·  Suscríbete", con_nico=True)
     clip_imagen(f"{tmp}/fin.png", 4, f"{tmp}/99.mp4"); partes.append(f"{tmp}/99.mp4")
     with open(f"{tmp}/lista.txt", "w") as f:
         for p in partes: f.write(f"file '{p}'\n")
