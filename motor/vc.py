@@ -138,12 +138,15 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
     bob = S(6) * math.sin(t * 2.6)
     def Y(dy): return y - S(dy) * sq + (bob if dy > 230 else 0)
     def LX(dx, dy): return x + S(dx) * st + lean * S(dy) * 0.25
-    pants = {"sudadera": (40, 52, 92), "pirata": (60, 44, 36), "heladero": (44, 46, 60)}.get(traje, (40, 52, 92))
+    pants = {"sudadera": (40, 52, 92), "pirata": (60, 44, 36), "heladero": (44, 46, 60), "vikingo": (96, 70, 48), "vikingo_coach": (96, 70, 48)}.get(traje, (40, 52, 92))
     shoe = {"sudadera": (30, 30, 40), "pirata": (24, 20, 20)}.get(traje, (30, 30, 40))
     # piernas
     for sx in (-1, 1):
         dr.rrect(LX(sx * 35 - 18, 230), Y(230), LX(sx * 35 + 18, 10), Y(10), S(14), pants)
         dr.ell(LX(sx * 42, 8), Y(8), S(36) * st, S(18), shoe)
+    if traje.startswith("vikingo"):   # vendas de cuero cruzadas en las piernas
+        for sx in (-1, 1):
+            for k in range(3): dr.line([(LX(sx * 35 - 18, 60 + k * 50), Y(60 + k * 50)), (LX(sx * 35 + 18, 85 + k * 50), Y(85 + k * 50))], (150, 110, 70), S(7))
     if traje == "pirata":
         for sx in (-1, 1): dr.rrect(LX(sx * 35 - 22, 95), Y(95), LX(sx * 35 + 22, 20), Y(20), S(10), (36, 28, 24))
     # torso
@@ -172,6 +175,18 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
                 dr.poly([(LX(sx * 24, yy), Y(yy)), (LX(sx * 110, yy), Y(yy)), (LX(sx * 110, yy - 26), Y(yy - 26)), (LX(sx * 24, yy - 26), Y(yy - 26))], TURQ)
         dr.rrect(LX(30, 430), Y(430), LX(80, 395), Y(395), S(4), (250, 250, 250))
         armc = shirt
+    elif traje.startswith("vikingo"):   # túnica roja, chaleco de piel, cinturón turquesa y silbato turquesa
+        tun = (176, 52, 44)
+        dr.rrect(tx0, ty0, tx1, ty1 + S(30), S(80), tun, True)
+        for sx in (-1, 1):
+            dr.poly([(LX(sx * 30, 468), Y(468)), (LX(sx * 112, 446), Y(446)), (LX(sx * 116, 215), Y(215)), (LX(sx * 40, 215), Y(215))], (150, 112, 74))
+            for k in range(5): dr.ell(LX(sx * 76, 430 - k * 48), Y(430 - k * 48), S(16), S(10), (186, 150, 104))
+        dr.rrect(LX(-116, 250), Y(250), LX(116, 210), Y(210), S(8), TURQ)
+        dr.rrect(LX(-22, 256), Y(256), LX(22, 204), Y(204), S(6), (230, 190, 60))
+        if traje == "vikingo_coach":
+            dr.line([(LX(-40, 462), Y(462)), (LX(0, 360), Y(360)), (LX(40, 462), Y(462))], TURQ_D, S(6))
+            dr.rrect(LX(-20, 372), Y(372), LX(24, 340), Y(340), S(10), TURQ)
+        armc = tun
     else:
         dr.rrect(tx0, ty0, tx1, ty1, S(90), (250, 246, 236), True)
         for k in range(5):
@@ -245,6 +260,15 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
         dr.chord(hx, hy - S(95), S(185), S(165), 180, 360, (250, 200, 40))
         dr.rrect(hx - S(235), hy - S(105), hx + S(235), hy - S(80), S(10), (232, 176, 30))
         dr.rrect(hx - S(24), hy - S(258), hx + S(24), hy - S(100), S(10), TURQ)
+    if traje == "vikingo":   # casco con cuernos (el mito) y franja turquesa
+        for sx in (-1, 1):
+            dr.poly([(hx + sx * S(140), hy - S(150)), (hx + sx * S(250), hy - S(250)), (hx + sx * S(270), hy - S(380)), (hx + sx * S(220), hy - S(260)), (hx + sx * S(120), hy - S(205))], (246, 236, 210), shade=sx > 0)
+        dr.chord(hx, hy - S(95), S(182), S(170), 180, 360, (150, 156, 170))
+        dr.rrect(hx - S(190), hy - S(110), hx + S(190), hy - S(82), S(8), TURQ)
+        dr.rrect(hx - S(14), hy - S(262), hx + S(14), hy - S(100), S(6), (120, 126, 140))
+    if traje == "vikingo_coach":   # cinta deportiva turquesa
+        dr.rrect(hx - S(186), hy - S(150), hx + S(186), hy - S(110), S(14), TURQ)
+        dr.poly([(hx + S(170), hy - S(140)), (hx + S(250), hy - S(170)), (hx + S(240), hy - S(100))], TURQ_D)
     return dict(hands=hands, head=(hx, hy), top=(hx, hy - R))
 
 # ------------------------------------------------------------ CAPITÁN BARBAGRIS
