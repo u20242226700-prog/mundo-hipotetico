@@ -310,9 +310,17 @@ Nico ni nada de eso". → NO usar compilar.py ni reciclar Shorts. NO aparece Nic
   cámara, sombras, onomatopeyas), sin glorificar el crimen (las consecuencias aparecen), sin groserías.
 - **Voces:** narrador Adrián (soniox) para la narración; personajes con openai gpt-4o-mini-tts (onyx, ash, coral,
   sage…) con instructions de acento y emoción (italiano-americano, japonés, francés…). ElevenLabs solo si hay crédito.
-- **Visual:** motor vector + cómic (motor/vc.py) adaptado a 16:9 (W,H = 1920,1080 en el episodio), personajes y
-  escenarios NUEVOS por historia, mapas/carteles con fecha y lugar, música procedural según la época.
-  Plano cada 4–7 s; nada de plano estático más de 8 s.
+- **Visual — ESTILO TOTALMENTE DISTINTO al de los Shorts (Daniel, 2026-11-17: "cambia los dibujos, un tipo de dibujo
+  totalmente distinto, personajes totalmente distintos"):** NO usar `nico()`, NO cabezones/chibi, NO el look cómic
+  colorido con puntos de los Shorts. Estilo "novela gráfica cinematográfica":
+  - Personajes con proporciones adultas realistas (7 cabezas de alto), rostros con rasgos marcados, ropa de la época
+    detallada; crear un motor nuevo `motor/cine.py` (no partir de vc.py para personajes).
+  - Iluminación dramática: luz dura de un lado, sombras grandes en bloque (claroscuro), siluetas a contraluz.
+  - Paleta limitada por historia (p. ej. mafia 1925: sepia/negro con rojo; yakuza 80s: azul noche + neón magenta;
+    Versalles: dorado y crema), con viñeta, grano de película y franjas negras de cine opcionales.
+  - Cámara cinematográfica: paralaje de 3–4 capas de fondo, travellings lentos, zoom de tensión, planos detalle
+    (manos, ojos, objetos), lluvia/humo/polvo como partículas.
+  - Antes del primer domingo: mostrar a Daniel un fotograma de prueba y esperar su visto bueno del estilo.
 - **Producción por partes:** un script por acto (acto1.py … acto6.py) que renderiza su mp4; luego concatenar con ffmpeg
   (`-f concat`) y comprimir (`-crf 26 -tune animation`, < 150 MB). Así ningún render es demasiado largo.
 - **Publicar:** Metricool solo YouTube, `"type": "video"`, domingo 16:00 Bogotá, category "ENTERTAINMENT", título tipo
