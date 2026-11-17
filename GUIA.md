@@ -165,6 +165,10 @@ Sin Blender aquí, así que hay un renderizador propio en numpy: `motor/clay.py`
 - Ubicar en pantalla: `gp(x_pantalla, y_pies, S)` → coords de mundo; `render(sc, S, 0, 0, W, H, luz)`.
   Luz de fogata: `luz_fuego(...)`.
 - **Lip sync:** la boca sigue la envolvente de la voz (`boca(k, t)`) cuando habla ese personaje.
+- **Respaldo de voz de Nico (2026-11-17):** si ElevenLabs responde 402 (se acabó el crédito gratis de Speko),
+  NO te detengas: usa openai `gpt-4o-mini-tts` voz **"ash"** con instructions "Eres Nico, un chico latino joven y
+  simpático de caricatura, acento colombiano neutro. Voz juvenil, enérgica…" (ajusta la emoción por frase) y
+  avísale a Daniel que puede recargar Speko (desde 5 USD) para recuperar la voz Johan.
 - **Voces:** narrador Adrián (soniox). Nico habla con "Johan - Colombiano" (elevenlabs, modelo
   eleven_v3_conversational, voz 4uvQjLPvqApx1dVzpNfM, admite [excited], [nervous]). Cavernícolas/monstruos:
   openai gpt-4o-mini-tts voz "onyx" con `instructions` de actuación. Verifica con audio_transcribe.
