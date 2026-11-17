@@ -290,15 +290,34 @@ línea minimalista. Una serie mantiene el mismo estilo en sus 3 capítulos.
 - Activas: TikTok + YouTube (Shorts). Instagram (Reels) se sumará cuando Daniel cree la cuenta y la
   conecte en Metricool: entonces agregar `{"network":"instagram"}` con `instagramData: {"type":"REEL", "isAiGenerated": true}`.
 
-## Recopilatorio semanal (domingos, YouTube video normal)
-- Lo hace una tarea aparte cada domingo. Junta los Shorts publicados de lunes a domingo (según `historial.md`),
-  primero las series completas (capítulos 1→3 seguidos) y luego las historias sueltas de la mañana.
-- Comando: `python3 compilar.py episodios/recopilatorios/AAAA-MM-DD/video.mp4 "<título>" "episodios/<carpeta>|<título corto>" ...`
-  (16:9, 1920×1080, portada con Nico, tarjeta antes de cada historia, cierre pidiendo ideas). Sin voz nueva.
-- Ideal 8+ minutos (permite anuncios a mitad de video). Con 14 Shorts sale ~9–10 min.
-- Publicar en Metricool solo en YouTube como `"type": "video"` (no short), domingo 16:00 Bogotá,
-  `category: "COMEDY"`, título tipo "¿Qué pasaría si…? 🌀 Las 14 historias de la semana de Nico", descripción con
-  capítulos (marcas de tiempo) y `autoPublish: true`.
+## Historia larga del domingo (YouTube video normal) — REEMPLAZA al recopilatorio desde el 2026-11-17
+Daniel (2026-11-17): "en los videos largos estás resubiendo shorts… quiero que crees historias totalmente diferentes,
+que no tengan nada que ver con los shorts… por ejemplo un video de nueve minutos sobre qué pasaría si soy un trabajador
+de la mafia italiana, o si soy un miembro de la yakuza en los años tales, o si soy un chef en tal época… no historias de
+Nico ni nada de eso". → NO usar compilar.py ni reciclar Shorts. NO aparece Nico ni el portal.
+- **Formato:** "¿Qué pasaría si fueras… <oficio/rol> en <lugar y época>?" contado en SEGUNDA PERSONA ("tú llegas a…").
+  El protagonista eres "tú": un personaje nuevo de cada historia (sin turquesa obligatorio, sin catchphrases de Nico).
+- **Duración:** 8:30–10:00 min (permite anuncios a mitad de video). 16:9, 1920×1080, 30 fps.
+- **Ideas (rotar, no repetir; anotar en historial.md):** trabajador de la mafia italiana en Nueva York 1925 (Ley Seca);
+  miembro de la yakuza en el Tokio de los 80; chef de la corte de Versalles 1680; gladiador en Roma; pirata en el
+  Caribe 1715; minero en la fiebre del oro 1849; samurái en el Japón feudal; espía en Berlín 1961; constructor de las
+  pirámides; marinero del Titanic; vaquero en el Viejo Oeste; esclavo remero de galera… y lo que pidan en comentarios.
+- **Estructura del guion (110–150 frases):** gancho fuerte 0:00–0:20 (el momento más tenso, luego "pero empecemos
+  por el principio"); 5–6 actos con título en pantalla (ACTO 1: LLEGAS…); datos históricos REALES y verificados
+  (busca en la web antes de escribir); un giro o cliffhanger al final de cada acto; clímax; final y pregunta
+  "¿Tú qué habrías hecho? / ¿Qué historia hago el próximo domingo?".
+- **Tono apto para anuncios:** crimen y peligro contados como historia, sin sangre ni violencia gráfica (cortes de
+  cámara, sombras, onomatopeyas), sin glorificar el crimen (las consecuencias aparecen), sin groserías.
+- **Voces:** narrador Adrián (soniox) para la narración; personajes con openai gpt-4o-mini-tts (onyx, ash, coral,
+  sage…) con instructions de acento y emoción (italiano-americano, japonés, francés…). ElevenLabs solo si hay crédito.
+- **Visual:** motor vector + cómic (motor/vc.py) adaptado a 16:9 (W,H = 1920,1080 en el episodio), personajes y
+  escenarios NUEVOS por historia, mapas/carteles con fecha y lugar, música procedural según la época.
+  Plano cada 4–7 s; nada de plano estático más de 8 s.
+- **Producción por partes:** un script por acto (acto1.py … acto6.py) que renderiza su mp4; luego concatenar con ffmpeg
+  (`-f concat`) y comprimir (`-crf 26 -tune animation`, < 150 MB). Así ningún render es demasiado largo.
+- **Publicar:** Metricool solo YouTube, `"type": "video"`, domingo 16:00 Bogotá, category "ENTERTAINMENT", título tipo
+  "¿Qué pasaría si fueras de la MAFIA ITALIANA en 1925? 🎩🔫" (sin "Nico"), descripción con capítulos (marcas de tiempo
+  de cada acto), tags, madeForKids false, isAiGeneratedContent true, autoPublish true.
 
 ## Calidad (pedido de Daniel el 2026-11-12: "que no se vean tan sencillos") — OBLIGATORIO
 ### Historia y guion
