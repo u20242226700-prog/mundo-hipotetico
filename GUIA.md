@@ -121,7 +121,7 @@ diferencie… a Nico puedes irle cambiando la ropa a veces")
   `dr.poly/ell/rrect/line/chord/pie/text` (todo plano, sin degradados). `tinta(dr)` = contornos + trama +
   saturación; luego `add_glow`, `add_cono` (reflectores) sobre el array; `acabado(f, T)` = viñeta + grano.
 - Personajes: `nico(dr, x, y_pies, s, t, traje=…, arms=(°,°), elbows=(°,°), mouth, expr, look, squash, sick, sweat)`
-  (expr: happy, happy_eyes, worried, nervous, shock, smug, angry; trajes: sudadera, pirata, heladero, ingeniero, vikingo [casco de cuernos], vikingo_coach [cinta y silbato], astronauta [casco de vidrio], piloto [gorro de cuero con gafas, bufanda turquesa], marinero [capitán de barco: gorra blanca con banda turquesa y ancla, chaqueta azul marino, pañuelo turquesa]), `capitan()`, `loro()`, `aleta()`, `tiburon()`.
+  (expr: happy, happy_eyes, worried, nervous, shock, smug, angry; trajes: sudadera, pirata, heladero, ingeniero, vikingo [casco de cuernos], vikingo_coach [cinta y silbato], astronauta [casco de vidrio], piloto [gorro de cuero con gafas, bufanda turquesa], marinero [capitán de barco: gorra blanca con banda turquesa y ancla, chaqueta azul marino, pañuelo turquesa], explorador [salacot beige con banda turquesa, camisa caqui con bolsillos, pañuelo turquesa, cantimplora]), `capitan()`, `loro()`, `aleta()`, `tiburon()`.
   Para trajes nuevos agrega ramas en `nico()` (ver `plantillas/nico_vestuario.py`).
 - La serie La Ruleta de Nico usa SIEMPRE: escenario de ruleta con telones y reflectores, ruleta de 8 casillas
   (`SEG`, `ang_ruleta` para frenar en la casilla elegida), insignias "LA RULETA DE NICO" + "CAPÍTULO X/3",
