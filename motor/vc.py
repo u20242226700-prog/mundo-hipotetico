@@ -138,8 +138,8 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
     bob = S(6) * math.sin(t * 2.6)
     def Y(dy): return y - S(dy) * sq + (bob if dy > 230 else 0)
     def LX(dx, dy): return x + S(dx) * st + lean * S(dy) * 0.25
-    pants = {"sudadera": (40, 52, 92), "pirata": (60, 44, 36), "heladero": (44, 46, 60), "vikingo": (96, 70, 48), "vikingo_coach": (96, 70, 48), "astronauta": (226, 228, 236), "piloto": (70, 64, 60), "marinero": (246, 246, 250), "explorador": (150, 122, 80), "vaquero": (58, 84, 140), "maquinista": (58, 92, 150)}.get(traje, (40, 52, 92))
-    shoe = {"sudadera": (30, 30, 40), "pirata": (24, 20, 20), "astronauta": (120, 126, 140), "explorador": (92, 60, 36), "vaquero": (120, 70, 36), "maquinista": (60, 40, 30)}.get(traje, (30, 30, 40))
+    pants = {"sudadera": (40, 52, 92), "pirata": (60, 44, 36), "heladero": (44, 46, 60), "vikingo": (96, 70, 48), "vikingo_coach": (96, 70, 48), "astronauta": (226, 228, 236), "piloto": (70, 64, 60), "marinero": (246, 246, 250), "explorador": (150, 122, 80), "vaquero": (58, 84, 140), "maquinista": (58, 92, 150), "azteca": SKIN}.get(traje, (40, 52, 92))
+    shoe = {"sudadera": (30, 30, 40), "pirata": (24, 20, 20), "astronauta": (120, 126, 140), "explorador": (92, 60, 36), "vaquero": (120, 70, 36), "maquinista": (60, 40, 30), "azteca": (150, 96, 50)}.get(traje, (30, 30, 40))
     # piernas
     for sx in (-1, 1):
         dr.rrect(LX(sx * 35 - 18, 230), Y(230), LX(sx * 35 + 18, 10), Y(10), S(14), pants)
@@ -263,6 +263,18 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
         dr.poly([(LX(-8, 414), Y(414)), (LX(-36, 356), Y(356)), (LX(8, 366), Y(366))], TURQ_D)
         dr.poly([(LX(8, 414), Y(414)), (LX(34, 360), Y(360)), (LX(-6, 368), Y(368))], TURQ_D)
         armc = shirt
+    elif traje == "azteca":   # azteca: túnica blanca de algodón (xicolli) con greca roja, faja turquesa y broche de turquesa en la capa
+        wt = (248, 244, 230); red = (196, 52, 44)
+        dr.rrect(tx0, ty0, tx1, ty1 + S(30), S(80), wt, True)
+        for k in range(6):
+            xx = -100 + k * 40
+            dr.poly([(LX(xx, 200), Y(200)), (LX(xx + 20, 226), Y(226)), (LX(xx + 40, 200), Y(200))], red)
+        dr.rrect(LX(-112, 186), Y(186), LX(112, 172), Y(172), S(4), red)
+        dr.rrect(LX(-114, 262), Y(262), LX(114, 228), Y(228), S(8), TURQ)
+        dr.poly([(LX(-20, 262), Y(262)), (LX(20, 262), Y(262)), (LX(10, 150), Y(150)), (LX(-12, 150), Y(150))], TURQ_D)
+        dr.poly([(LX(-112, 470), Y(470)), (LX(-40, 470), Y(470)), (LX(-118, 300), Y(300))], (230, 120, 60))
+        dr.ell(LX(-70, 446), Y(446), S(26), S(26), TURQ); dr.ell(LX(-70, 446), Y(446), S(11), S(11), (180, 250, 255), nolin=True)
+        armc = wt
     else:
         dr.rrect(tx0, ty0, tx1, ty1, S(90), (250, 246, 236), True)
         for k in range(5):
@@ -381,6 +393,16 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
         dr.poly([(hx - S(300), hy - S(150)), (hx - S(250), hy - S(105)), (hx, hy - S(95)), (hx + S(250), hy - S(105)), (hx + S(300), hy - S(150)), (hx + S(200), hy - S(135)), (hx - S(200), hy - S(135))], (150, 96, 50), shade=True)
         dr.poly([(hx - S(160), hy - S(130)), (hx - S(140), hy - S(300)), (hx - S(50), hy - S(330)), (hx, hy - S(295)), (hx + S(50), hy - S(330)), (hx + S(140), hy - S(300)), (hx + S(160), hy - S(130))], (172, 112, 60))
         dr.rrect(hx - S(160), hy - S(185), hx + S(160), hy - S(145), S(8), TURQ)
+    if traje == "azteca":   # cinta de tela roja con placa de turquesa y penacho de plumas verdes (quetzal)
+        for k, ang in enumerate((-40, -22, -8, 8, 22, 40)):
+            a = math.radians(ang - 90); L = S(250 if abs(ang) < 15 else 210)
+            bx, by = hx + math.cos(a) * S(60), hy - S(150)
+            col = (40, 160, 90) if k % 2 == 0 else (60, 190, 120)
+            dr.poly([(bx - S(22), by), (bx + math.cos(a) * L - S(10), by + math.sin(a) * L), (bx + math.cos(a) * L * 1.05, by + math.sin(a) * L * 1.05), (bx + S(22), by)], col)
+            dr.ell(bx + math.cos(a) * L * 0.9, by + math.sin(a) * L * 0.9, S(16), S(16), TURQ, nolin=True)
+        dr.rrect(hx - S(192), hy - S(158), hx + S(192), hy - S(116), S(12), (196, 52, 44))
+        dr.rrect(hx - S(40), hy - S(176), hx + S(40), hy - S(100), S(12), TURQ)
+        dr.ell(hx, hy - S(138), S(16), S(16), (180, 250, 255), nolin=True)
     if traje == "astronauta":   # aro del casco + brillo del vidrio
         X, Y0 = dr.cam.p(hx, hy - S(10)); rx, ry = dr.cam.s(R * 1.32 * st), dr.cam.s(R * 1.32 * sq)
         ww = max(3, int(dr.cam.s(S(22))))
