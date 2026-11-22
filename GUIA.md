@@ -327,6 +327,18 @@ Nico ni nada de eso". → NO usar compilar.py ni reciclar Shorts. NO aparece Nic
   "¿Qué pasaría si fueras de la MAFIA ITALIANA en 1925? 🎩🔫" (sin "Nico"), descripción con capítulos (marcas de tiempo
   de cada acto), tags, madeForKids false, isAiGeneratedContent true, autoPublish true.
 
+### Motor de novela gráfica `motor/cine.py` (creado el 2026-11-22, primer largo: Mafia NY 1925)
+- Plantilla completa: `episodios/largos/2026-11-22-mafia-1925/` → `guion_data.py` (líneas `(voz, texto, plano)` con
+  `S(esc, ch=[(quien, x, encuadre full|medio|cara, pose, mira)], cam, fx, ins)`), `escenas.py` (paleta, personajes con
+  `definir_personaje`, escenarios por capas con profundidad, insertos, efectos de pantalla, música por escenario),
+  `comun.py` + `acto1.py…acto6.py` (`python3 actoN.py prev 0,5,9` = fotogramas grandes de prueba; sin args = render).
+- Voces en `voz/vNNN.wav` (número = orden global de la línea) → `vNNN_f.wav` con silenceremove + `atempo=1.2`.
+  Hecho con un subagente que llama Speko línea por línea y guarda con un script (el audio llega como archivo .wav).
+- Render ≈ 0,07 s/cuadro + codificación; 6 actos (~590 s) ≈ 25 min con 2–3 procesos en paralelo.
+- **GitHub no acepta archivos > 100 MB**: el video final debe quedar < 100 MB (no 150). El grano de película no
+  comprime: en el pase final usar `hqdn3d` + 2 pasadas a ~1,1 Mbps (ver historial del 22-nov).
+- Pendiente de mejorar: manos/brazos más naturales, más poses, cuerpos menos rectangulares, bocas con más formas.
+
 ## Calidad (pedido de Daniel el 2026-11-12: "que no se vean tan sencillos") — OBLIGATORIO
 ### Historia y guion
 - Estructura de cada video: **gancho** (1 s, pregunta absurda o imagen impactante) → **escalada** (cada escena
