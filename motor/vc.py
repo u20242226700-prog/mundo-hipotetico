@@ -138,8 +138,8 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
     bob = S(6) * math.sin(t * 2.6)
     def Y(dy): return y - S(dy) * sq + (bob if dy > 230 else 0)
     def LX(dx, dy): return x + S(dx) * st + lean * S(dy) * 0.25
-    pants = {"sudadera": (40, 52, 92), "pirata": (60, 44, 36), "heladero": (44, 46, 60), "vikingo": (96, 70, 48), "vikingo_coach": (96, 70, 48), "astronauta": (226, 228, 236), "piloto": (70, 64, 60), "marinero": (246, 246, 250), "explorador": (150, 122, 80), "vaquero": (58, 84, 140), "maquinista": (58, 92, 150), "azteca": SKIN, "pieles": (128, 88, 58)}.get(traje, (40, 52, 92))
-    shoe = {"sudadera": (30, 30, 40), "pirata": (24, 20, 20), "astronauta": (120, 126, 140), "explorador": (92, 60, 36), "vaquero": (120, 70, 36), "maquinista": (60, 40, 30), "azteca": (150, 96, 50), "pieles": (236, 230, 220)}.get(traje, (30, 30, 40))
+    pants = {"sudadera": (40, 52, 92), "pirata": (60, 44, 36), "heladero": (44, 46, 60), "vikingo": (96, 70, 48), "vikingo_coach": (96, 70, 48), "astronauta": (226, 228, 236), "piloto": (70, 64, 60), "marinero": (246, 246, 250), "explorador": (150, 122, 80), "vaquero": (58, 84, 140), "maquinista": (58, 92, 150), "azteca": SKIN, "pieles": (128, 88, 58), "obrero": (92, 74, 56)}.get(traje, (40, 52, 92))
+    shoe = {"sudadera": (30, 30, 40), "pirata": (24, 20, 20), "astronauta": (120, 126, 140), "explorador": (92, 60, 36), "vaquero": (120, 70, 36), "maquinista": (60, 40, 30), "azteca": (150, 96, 50), "pieles": (236, 230, 220), "obrero": (110, 70, 40)}.get(traje, (30, 30, 40))
     # piernas
     for sx in (-1, 1):
         dr.rrect(LX(sx * 35 - 18, 230), Y(230), LX(sx * 35 + 18, 10), Y(10), S(14), pants)
@@ -262,6 +262,18 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
         dr.poly([(LX(-62, 476), Y(476)), (LX(62, 476), Y(476)), (LX(0, 404), Y(404))], TURQ)
         dr.poly([(LX(-8, 414), Y(414)), (LX(-36, 356), Y(356)), (LX(8, 366), Y(366))], TURQ_D)
         dr.poly([(LX(8, 414), Y(414)), (LX(34, 360), Y(360)), (LX(-6, 368), Y(368))], TURQ_D)
+        armc = shirt
+    elif traje == "obrero":   # obrero de represa (años 30): camisa caqui arremangada, tirantes, cinturón de herramientas turquesa con martillo
+        shirt = (204, 178, 124)
+        dr.rrect(tx0, ty0, tx1, ty1 + S(10), S(84), shirt, True)
+        dr.poly([(LX(-34, 470), Y(470)), (LX(34, 470), Y(470)), (LX(0, 420), Y(420))], (236, 220, 180))
+        for k in range(3): dr.ell(LX(0, 400 - k * 50), Y(400 - k * 50), S(8), S(8), (120, 96, 60))
+        for sx in (-1, 1): dr.line([(LX(sx * 58, 210), Y(210)), (LX(sx * 70, 466), Y(466))], (110, 70, 40), S(16))
+        dr.rrect(LX(-112, 250), Y(250), LX(112, 206), Y(206), S(10), TURQ)
+        dr.rrect(LX(-20, 252), Y(252), LX(20, 204), Y(204), S(6), (230, 190, 70))
+        dr.rrect(LX(60, 236), Y(236), LX(98, 160), Y(160), S(6), TURQ_D)
+        dr.line([(LX(-80, 230), Y(230)), (LX(-92, 150), Y(150))], (122, 82, 50), S(12))
+        dr.rrect(LX(-118, 160), Y(160), LX(-66, 136), Y(136), S(4), (150, 156, 170))
         armc = shirt
     elif traje == "azteca":   # azteca: túnica blanca de algodón (xicolli) con greca roja, faja turquesa y broche de turquesa en la capa
         wt = (248, 244, 230); red = (196, 52, 44)
@@ -396,6 +408,11 @@ def nico(dr, x, y, s, t, traje="sudadera", arms=(15, 15), elbows=(0, 0), mouth=0
         dr.chord(hx, hy - S(128), S(178), S(170), 180, 360, (236, 216, 164))
         dr.rrect(hx - S(180), hy - S(178), hx + S(180), hy - S(140), S(8), TURQ)
         dr.ell(hx, hy - S(298), S(20), S(12), (200, 176, 120))
+    if traje == "obrero":   # casco blanco abombado de ala completa (como los de la represa Hoover) con banda turquesa
+        dr.ell(hx, hy - S(105), S(250), S(46), (236, 236, 228), shade=True)
+        dr.chord(hx, hy - S(105), S(182), S(175), 180, 360, (246, 246, 240))
+        dr.rrect(hx - S(180), hy - S(150), hx + S(180), hy - S(112), S(8), TURQ)
+        dr.line([(hx, hy - S(276)), (hx, hy - S(155))], (220, 220, 212), S(14))
     if traje == "maquinista":   # gorra de maquinista de rayas azul/blanco con visera y botón turquesa
         dr.chord(hx, hy - S(110), S(196), S(150), 180, 360, (236, 238, 244))
         for k in range(-3, 4):
